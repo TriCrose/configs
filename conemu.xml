@@ -98,7 +98,7 @@
 			<value name="Multi.AutoCreate" type="hex" data="00"/>
 			<value name="Multi.LeaveOnClose" type="hex" data="00"/>
 			<value name="Multi.HideOnClose" type="hex" data="00"/>
-			<value name="Multi.MinByEsc" type="hex" data="01"/>
+			<value name="Multi.MinByEsc" type="hex" data="00"/>
 			<value name="MapShiftEscToEsc" type="hex" data="01"/>
 			<value name="Multi.Iterate" type="hex" data="01"/>
 			<value name="Multi.SplitWidth" type="hex" data="04"/>
