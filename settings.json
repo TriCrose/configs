@@ -2,5 +2,6 @@
     "editor.renderWhitespace": "all",
     "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
     "editor.minimap.enabled": false,
-    "editor.autoSurround": "never"
+    "editor.autoSurround": "never",
+    "workbench.editor.showTabs": false
 }
