@@ -6,7 +6,6 @@
     "workbench.editor.showTabs": false,
     "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
 
-    // GitLens
     "gitlens.codeLens.scopes": [
         "document"
     ],
