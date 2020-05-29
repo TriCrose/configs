@@ -5,6 +5,7 @@
     "editor.rulers": [120],
     "workbench.editor.showTabs": false,
     "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "zenMode.hideLineNumbers": false,
 
     "gitlens.codeLens.scopes": [
         "document"
