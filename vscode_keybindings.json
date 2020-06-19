@@ -1,4 +1,5 @@
-// Place your key bindings in this file to override the defaults
 [
-    {"key": "ctrl+shift+a", "command": "workbench.action.tasks.runTask"}
+    {"key": "ctrl+shift+a", "command": "workbench.action.tasks.runTask"},
+    {"key": "shift+alt+enter", "command": "workbench.action.terminal.new"},
+    {"key": "alt+enter", "command": "workbench.action.terminal.toggleTerminal"},
 ]
