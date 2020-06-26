@@ -6,5 +6,7 @@
         "key": "alt+up",
         "command": "workbench.action.toggleMaximizedPanel",
         "when": "terminalFocus"
-    }
+    },
+
+    {"key": "ctrl+e", "command": "workbench.action.navigateEditorGroups"}
 ]
