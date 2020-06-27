@@ -1,12 +1,11 @@
 [
     {"key": "ctrl+shift+a", "command": "workbench.action.tasks.runTask"},
+    {"key": "ctrl+e", "command": "workbench.action.navigateEditorGroups"},
     {"key": "shift+alt+enter", "command": "workbench.action.terminal.new"},
     {"key": "alt+enter", "command": "workbench.action.terminal.toggleTerminal"},
     {
         "key": "alt+up",
         "command": "workbench.action.toggleMaximizedPanel",
         "when": "terminalFocus"
-    },
-
-    {"key": "ctrl+e", "command": "workbench.action.navigateEditorGroups"}
+    }
 ]
