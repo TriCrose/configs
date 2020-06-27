@@ -11,5 +11,12 @@
     "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
     "zenMode.hideLineNumbers": false,
     "explorer.confirmDelete": false,
-    "breadcrumbs.enabled": false
+    "explorer.confirmDragAndDrop": false,
+    "breadcrumbs.enabled": false,
+
+    "vim.disableExtension": false,
+    "vim.useCtrlKeys": false,
+    "vim.handleKeys": {
+        "<C-d>": false
+    }
 }
