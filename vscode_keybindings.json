@@ -4,8 +4,6 @@
     {"key": "shift+alt+enter", "command": "workbench.action.terminal.new"},
     {"key": "alt+enter", "command": "workbench.action.terminal.toggleTerminal"},
     {"key": "ctrl+j", "command": "-workbench.action.togglePanel"},
-{ "key": "ctrl+c",                "command": "editor.action.clipboardCopyAction",
-                                     "when": "textInputFocus" },
     {
         "key": "alt+up",
         "command": "workbench.action.toggleMaximizedPanel",
