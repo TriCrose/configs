@@ -3,9 +3,45 @@
     {"key": "ctrl+e", "command": "workbench.action.navigateEditorGroups"},
     {"key": "shift+alt+enter", "command": "workbench.action.terminal.new"},
     {"key": "alt+enter", "command": "workbench.action.terminal.toggleTerminal"},
+    {"key": "ctrl+j", "command": "-workbench.action.togglePanel"},
+{ "key": "ctrl+c",                "command": "editor.action.clipboardCopyAction",
+                                     "when": "textInputFocus" },
     {
         "key": "alt+up",
         "command": "workbench.action.toggleMaximizedPanel",
         "when": "terminalFocus"
+    },
+
+    // vscode-neovim
+    {
+        "command": "vscode-neovim.send",
+        "key": "ctrl+z"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "-vscode-neovim.escape"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "vscode-neovim.escape",
+        "when": "editorTextFocus && neovim.mode != normal"
+    },
+    {
+        "command": "vscode-neovim.send",
+        "key": "ctrl+d",
+        "when": "editorTextFocus && neovim.mode != insert",
+        "args": "<C-d>"
+    },
+    {
+        "command": "vscode-neovim.send",
+        "key": "ctrl+u",
+        "when": "editorTextFocus && neovim.mode != insert",
+        "args": "<C-u>"
+    },
+    {
+        "command": "vscode-neovim.send",
+        "key": "ctrl+r",
+        "when": "editorTextFocus && neovim.mode != insert",
+        "args": "<C-r>"
     }
 ]
