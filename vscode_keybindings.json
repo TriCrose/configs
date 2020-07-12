@@ -1,14 +1,16 @@
 [
     {"key": "ctrl+shift+a", "command": "workbench.action.tasks.runTask"},
     {"key": "ctrl+e", "command": "workbench.action.navigateEditorGroups"},
-    {"key": "shift+alt+enter", "command": "workbench.action.terminal.new"},
+    {"key": "ctrl+tab", "command": "workbench.action.nextEditor"},
+    {"key": "ctrl+shift+tab", "command": "workbench.action.previousEditor"},
+
+    // Terminals
     {"key": "alt+enter", "command": "workbench.action.terminal.toggleTerminal"},
-    {"key": "ctrl+j", "command": "-workbench.action.togglePanel"},
-    {
-        "key": "alt+up",
-        "command": "workbench.action.toggleMaximizedPanel",
-        "when": "terminalFocus"
-    },
+    {"key": "shift+alt+enter", "command": "workbench.action.terminal.new"},
+    {"key": "alt+up", "when": "terminalFocus", "command": "workbench.action.toggleMaximizedPanel"},
+    {"key": "alt+right", "when": "terminalFocus", "command": "workbench.action.terminal.focusNext"},
+    {"key": "alt+left", "when": "terminalFocus", "command": "workbench.action.terminal.focusPrevious"},
+    {"key": "alt+delete", "when": "terminalFocus", "command": "workbench.action.terminal.kill"},
 
     // // vscode-neovim
     // {
