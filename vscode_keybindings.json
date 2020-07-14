@@ -3,6 +3,7 @@
     {"key": "ctrl+e", "command": "workbench.action.navigateEditorGroups"},
     {"key": "ctrl+tab", "command": "workbench.action.nextEditorInGroup"},
     {"key": "ctrl+shift+tab", "command": "workbench.action.previousEditorInGroup"},
+    {"key": "ctrl+alt+s", "command": "workbench.action.editorLayoutSingle"},
 
     // Terminals
     {"key": "alt+enter", "command": "workbench.action.terminal.toggleTerminal"},
