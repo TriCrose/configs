@@ -4,10 +4,9 @@ powertoys/*
 !powertoys/FancyZones
 !powertoys/Keyboard Manager
 
-# Only want settings.json and zones-settings.json from FancyZones
+# Only want settings.json from FancyZones
 powertoys/FancyZones/*
 !powertoys/FancyZones/settings.json
-!powertoys/FancyZones/zones-settings.json
 
 # Only want default.json and settings.json from Keyboard Manager
 powertoys/Keyboard Manager/*
