@@ -14,7 +14,7 @@
     "explorer.confirmDragAndDrop": false,
     "breadcrumbs.enabled": false,
 
-    "vscode-neovim.neovimPath": "C:\\neovim\\bin\\nvim.exe",
-    "vscode-neovim.useCtrlKeysForInsertMode": false,
-    "vscode-neovim.useCtrlKeysForNormalMode": false
+    // "vscode-neovim.neovimPath": "C:\\neovim\\bin\\nvim.exe",
+    // "vscode-neovim.useCtrlKeysForInsertMode": false,
+    // "vscode-neovim.useCtrlKeysForNormalMode": false
 }
