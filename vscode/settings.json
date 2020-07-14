@@ -12,7 +12,7 @@
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "breadcrumbs.enabled": false,
+    "breadcrumbs.enabled": false
 
     // "vscode-neovim.neovimPath": "C:\\neovim\\bin\\nvim.exe",
     // "vscode-neovim.useCtrlKeysForInsertMode": false,

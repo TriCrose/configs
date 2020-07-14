@@ -1,0 +1,15 @@
+# Only want *some* files from FancyZones and Keyboard Manager
+# Have to specify directories like this since it's not possible to re-include a file if it's parent is excluded
+powertoys/*
+!powertoys/FancyZones
+!powertoys/Keyboard Manager
+
+# Only want settings.json and zones-settings.json from FancyZones
+powertoys/FancyZones/*
+!powertoys/FancyZones/settings.json
+!powertoys/FancyZones/zones-settings.json
+
+# Only want default.json and settings.json from Keyboard Manager
+powertoys/Keyboard Manager/*
+!powertoys/Keyboard Manager/default.json
+!powertoys/Keyboard Manager/settings.json
