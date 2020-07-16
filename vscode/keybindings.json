@@ -1,9 +1,13 @@
 [
     {"key": "ctrl+shift+a", "command": "workbench.action.tasks.runTask"},
-    {"key": "ctrl+e", "command": "workbench.action.navigateEditorGroups"},
     {"key": "ctrl+tab", "command": "workbench.action.nextEditorInGroup"},
-    {"key": "ctrl+shift+tab", "command": "workbench.action.previousEditorInGroup"},
+    {"key": "ctrl+e", "when": "textInputFocus && !editorReadonly", "command": "editor.action.deleteLines"},
     {"key": "ctrl+alt+s", "command": "workbench.action.editorLayoutSingle"},
+    {"key": "ctrl+shift+tab", "command": "workbench.action.previousEditorInGroup"},
+    {"key": "ctrl+alt+shift+down", "command": "workbench.action.moveActiveEditorGroupDown"},
+    {"key": "ctrl+alt+shift+left", "command": "workbench.action.moveActiveEditorGroupLeft"},
+    {"key": "ctrl+alt+shift+right", "command": "workbench.action.moveActiveEditorGroupRight"},
+    {"key": "ctrl+alt+shift+up", "command": "workbench.action.moveActiveEditorGroupUp"},
 
     // Terminals
     {"key": "alt+enter", "command": "workbench.action.terminal.toggleTerminal"},
