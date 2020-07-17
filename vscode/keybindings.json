@@ -9,6 +9,8 @@
     {"key": "ctrl+alt+shift+right", "command": "workbench.action.moveActiveEditorGroupRight"},
     {"key": "ctrl+alt+shift+up", "command": "workbench.action.moveActiveEditorGroupUp"},
 
+    {"key": "ctrl+enter", "command": "editor.action.joinLines"},
+
     // Terminals
     {"key": "alt+enter", "command": "workbench.action.terminal.toggleTerminal"},
     {"key": "shift+alt+enter", "command": "workbench.action.terminal.new"},
