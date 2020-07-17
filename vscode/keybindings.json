@@ -1,15 +1,31 @@
 [
     {"key": "ctrl+shift+a", "command": "workbench.action.tasks.runTask"},
+
+    // Editor navigation
     {"key": "ctrl+tab", "command": "workbench.action.nextEditorInGroup"},
-    {"key": "ctrl+e", "when": "textInputFocus && !editorReadonly", "command": "editor.action.deleteLines"},
-    {"key": "ctrl+alt+s", "command": "workbench.action.editorLayoutSingle"},
     {"key": "ctrl+shift+tab", "command": "workbench.action.previousEditorInGroup"},
+
+    // Editor group management
+    {"key": "ctrl+alt+s", "command": "workbench.action.editorLayoutSingle"},
     {"key": "ctrl+alt+shift+down", "command": "workbench.action.moveActiveEditorGroupDown"},
     {"key": "ctrl+alt+shift+left", "command": "workbench.action.moveActiveEditorGroupLeft"},
     {"key": "ctrl+alt+shift+right", "command": "workbench.action.moveActiveEditorGroupRight"},
     {"key": "ctrl+alt+shift+up", "command": "workbench.action.moveActiveEditorGroupUp"},
 
-    {"key": "ctrl+enter", "command": "editor.action.joinLines"},
+    // Line manipulation
+    {"key": "ctrl+e", "command": "-workbench.action.quickOpen"},
+    {"key": "ctrl+e", "when": "textInputFocus && !editorReadonly", "command": "editor.action.joinLines"},
+    {"key": "shift+backspace", "when": "textInputFocus && !editorReadonly", "command": "editor.action.deleteLines"},
+
+    // Smart select (previously shift+alt+left and shift+alt+right)
+    {"key": "ctrl+enter", "when": "textInputFocus", "command": "editor.action.smartSelect.expand"},
+    {"key": "ctrl+shift+enter", "when": "textInputFocus", "command": "editor.action.smartSelect.shrink"},
+
+    // Moving between wordsInCamelCase
+    {"key": "ctrl+up", "when": "textInputFocus", "command": "cursorWordPartLeft"},
+    {"key": "ctrl+shift+up", "when": "textInputFocus", "command": "cursorWordPartLeftSelect"},
+    {"key": "ctrl+down", "when": "textInputFocus", "command": "cursorWordPartRight"},
+    {"key": "ctrl+shift+down", "when": "textInputFocus", "command": "cursorWordPartRightSelect"},
 
     // Terminals
     {"key": "alt+enter", "command": "workbench.action.terminal.toggleTerminal"},
@@ -17,38 +33,5 @@
     {"key": "alt+up", "when": "terminalFocus", "command": "workbench.action.toggleMaximizedPanel"},
     {"key": "alt+right", "when": "terminalFocus", "command": "workbench.action.terminal.focusNext"},
     {"key": "alt+left", "when": "terminalFocus", "command": "workbench.action.terminal.focusPrevious"},
-    {"key": "alt+delete", "when": "terminalFocus", "command": "workbench.action.terminal.kill"},
-
-    // // vscode-neovim
-    // {
-    //     "command": "vscode-neovim.send",
-    //     "key": "ctrl+z"
-    // },
-    // {
-    //     "key": "ctrl+c",
-    //     "command": "-vscode-neovim.escape"
-    // },
-    // {
-    //     "key": "ctrl+c",
-    //     "command": "vscode-neovim.escape",
-    //     "when": "editorTextFocus && neovim.mode != normal"
-    // },
-    // {
-    //     "command": "vscode-neovim.send",
-    //     "key": "ctrl+d",
-    //     "when": "editorTextFocus && neovim.mode != insert",
-    //     "args": "<C-d>"
-    // },
-    // {
-    //     "command": "vscode-neovim.send",
-    //     "key": "ctrl+u",
-    //     "when": "editorTextFocus && neovim.mode != insert",
-    //     "args": "<C-u>"
-    // },
-    // {
-    //     "command": "vscode-neovim.send",
-    //     "key": "ctrl+r",
-    //     "when": "editorTextFocus && neovim.mode != insert",
-    //     "args": "<C-r>"
-    // }
+    {"key": "alt+delete", "when": "terminalFocus", "command": "workbench.action.terminal.kill"}
 ]
