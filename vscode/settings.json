@@ -6,7 +6,6 @@
     "editor.fontFamily": "Fira Code, Consolas, monospace",
     "editor.fontSize": 13,
     "editor.fontLigatures": true,
-    "editor.cursorStyle": "block",
     "editor.cursorBlinking": "phase",
     "editor.renderLineHighlight": "all",
 
