@@ -10,7 +10,7 @@
 
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
 
-    "initialRows": 25,
+    "initialRows": 29,
     "initialCols": 100,
 
     // You can add more global application settings here.
@@ -35,8 +35,8 @@
         {
             "colorScheme": "One Half Dark",
             "cursorShape": "emptyBox",
-            "fontFace": "Consolas",
-            "fontSize": 11,
+            "fontFace": "Fira Code",
+            "fontSize": 10,
             "startingDirectory": "C:\\"
         },
         "list":
