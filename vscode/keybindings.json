@@ -21,12 +21,6 @@
     {"key": "ctrl+enter", "when": "textInputFocus", "command": "editor.action.smartSelect.expand"},
     {"key": "ctrl+shift+enter", "when": "textInputFocus", "command": "editor.action.smartSelect.shrink"},
 
-    // Moving between wordsInCamelCase
-    {"key": "ctrl+up", "when": "textInputFocus", "command": "cursorWordPartLeft"},
-    {"key": "ctrl+shift+up", "when": "textInputFocus", "command": "cursorWordPartLeftSelect"},
-    {"key": "ctrl+down", "when": "textInputFocus", "command": "cursorWordPartRight"},
-    {"key": "ctrl+shift+down", "when": "textInputFocus", "command": "cursorWordPartRightSelect"},
-
     // Terminals
     {"key": "alt+enter", "command": "workbench.action.terminal.toggleTerminal"},
     {"key": "shift+alt+enter", "command": "workbench.action.terminal.new"},
