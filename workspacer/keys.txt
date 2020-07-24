@@ -1,0 +1,16 @@
+close window:               win + delete
+shrink primary area:        win + left
+grow primary area:          win + right
+focus next:                 win + down
+focus prev:                 win + up
+focus primary:              win + space
+swap focus/primary:         ctrl + win + space
+rotate ccw:                 ctrl + win + left
+rotate cw:                  ctrl + win + right
++1 primary windows:         ctrl + win + up
+-1 primary windows:         ctrl + win + down
+switch to workspace:        win + {1..9}
+move window to workspace:   shift + win + {1..9}
+
+open action menu:           win + q
+toggle tiling:              win + a
