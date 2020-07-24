@@ -24,8 +24,8 @@
     // Terminals
     {"key": "alt+enter", "command": "workbench.action.terminal.toggleTerminal"},
     {"key": "shift+alt+enter", "command": "workbench.action.terminal.new"},
-    {"key": "alt+up", "when": "terminalFocus", "command": "workbench.action.toggleMaximizedPanel"},
-    {"key": "alt+right", "when": "terminalFocus", "command": "workbench.action.terminal.focusNext"},
-    {"key": "alt+left", "when": "terminalFocus", "command": "workbench.action.terminal.focusPrevious"},
-    {"key": "alt+delete", "when": "terminalFocus", "command": "workbench.action.terminal.kill"}
+    {"key": "alt+up", "when": "panelFocus", "command": "workbench.action.toggleMaximizedPanel"},
+    {"key": "alt+right", "when": "panelFocus", "command": "workbench.action.terminal.focusNext"},
+    {"key": "alt+left", "when": "panelFocus", "command": "workbench.action.terminal.focusPrevious"},
+    {"key": "alt+delete", "when": "panelFocus", "command": "workbench.action.terminal.kill"}
 ]
