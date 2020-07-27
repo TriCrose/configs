@@ -19,5 +19,7 @@
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "breadcrumbs.enabled": false
+    "breadcrumbs.enabled": false,
+
+    "powershell.integratedConsole.showOnStartup": false
 }
