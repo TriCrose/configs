@@ -17,8 +17,10 @@
     "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
     "zenMode.hideLineNumbers": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.iconTheme": "vs-nomo-dark",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "breadcrumbs.enabled": false,
-    "workbench.iconTheme": "vs-nomo-dark"
+
+    "powershell.integratedConsole.showOnStartup": false
 }
