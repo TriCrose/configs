@@ -1,3 +1,5 @@
+.gitconfig
+
 # Only want *some* files from FancyZones and Keyboard Manager
 # Have to specify directories like this since it's not possible to re-include a file if it's parent is excluded
 powertoys/*
