@@ -1,7 +1,6 @@
 {
     "editor.renderWhitespace": "all",
     "editor.minimap.enabled": false,
-    "editor.autoSurround": "never",
     "editor.rulers": [120],
     "editor.fontFamily": "Fira Code, Consolas, monospace",
     "editor.fontSize": 13,

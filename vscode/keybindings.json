@@ -27,5 +27,8 @@
     {"key": "alt+up", "when": "panelFocus", "command": "workbench.action.toggleMaximizedPanel"},
     {"key": "alt+right", "when": "panelFocus", "command": "workbench.action.terminal.focusNext"},
     {"key": "alt+left", "when": "panelFocus", "command": "workbench.action.terminal.focusPrevious"},
-    {"key": "alt+delete", "when": "panelFocus", "command": "workbench.action.terminal.kill"}
+    {"key": "alt+delete", "when": "panelFocus", "command": "workbench.action.terminal.kill"},
+
+    // Process explorer
+    {"key": "shift+escape", "command": "workbench.action.openProcessExplorer"}
 ]
