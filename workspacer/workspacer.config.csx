@@ -9,7 +9,6 @@ using workspacer.Bar;
 using workspacer.ActionMenu;
 using workspacer.FocusIndicator;
 
-
 Action<IConfigContext> doConfig = (context) =>
 {
     context.DefaultLayouts = () => new ILayoutEngine[] {
@@ -22,6 +21,9 @@ Action<IConfigContext> doConfig = (context) =>
 
     context.Keybinds.Subscribe(KeyModifiers.Win, Keys.Q, context.Quit, "Quit workspacer");
     context.Keybinds.Subscribe(KeyModifiers.Win, Keys.W, context.Restart, "Restart workspacer");
+    context.Keybinds.Subscribe(KeyModifiers.Shift | KeyModifiers.Win, Keys.Z, () => context.Workspaces.FocusedWorkspace.NextLayoutEngine(), "Next layout engine");
+    context.Keybinds.Subscribe(KeyModifiers.Shift | KeyModifiers.Win, Keys.Oem2, () => context.Keybinds.ShowKeybindDialog(), "Show keybind dialog");
+    context.Keybinds.Subscribe(KeyModifiers.Shift | KeyModifiers.Win, Keys.I, () => context.ToggleConsoleWindow(), "Toggle console window");
 
     context.Keybinds.Subscribe(KeyModifiers.Win, Keys.Delete, () => context.Workspaces.FocusedWorkspace.CloseFocusedWindow(), "Close focused window");
     context.Keybinds.Subscribe(KeyModifiers.Win, Keys.Left, () => context.Workspaces.FocusedWorkspace.ShrinkPrimaryArea(), "Shrink primary area");
@@ -29,8 +31,6 @@ Action<IConfigContext> doConfig = (context) =>
     context.Keybinds.Subscribe(KeyModifiers.Win, Keys.Down, () => context.Workspaces.FocusedWorkspace.FocusNextWindow(), "Focus next window");
     context.Keybinds.Subscribe(KeyModifiers.Win, Keys.Up, () => context.Workspaces.FocusedWorkspace.FocusPreviousWindow(), "Focus previous window");
     context.Keybinds.Subscribe(KeyModifiers.Win, Keys.Space, () => context.Workspaces.FocusedWorkspace.FocusPrimaryWindow(), "Focus primary window");
-
-    context.Keybinds.Subscribe(KeyModifiers.Shift | KeyModifiers.Win, Keys.Z, () => context.Workspaces.FocusedWorkspace.NextLayoutEngine(), "Next layout engine");
 
     context.Keybinds.Subscribe(KeyModifiers.Control | KeyModifiers.Win, Keys.Space, () => context.Workspaces.FocusedWorkspace.SwapFocusAndPrimaryWindow(), "Swap focus/primary window");
     context.Keybinds.Subscribe(KeyModifiers.Control | KeyModifiers.Win, Keys.Down, () => context.Workspaces.FocusedWorkspace.SwapFocusAndNextWindow(), "Swap focus/next window");
@@ -60,4 +60,5 @@ Action<IConfigContext> doConfig = (context) =>
 
     context.WorkspaceContainer.CreateWorkspaces("1", "2", "3", "4", "5", "6", "7", "8", "9");
 };
+
 return doConfig;
