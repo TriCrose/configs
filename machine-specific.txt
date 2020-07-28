@@ -1,3 +1,2 @@
-.gitconfig:             email address
 notepad++/config.xml:   path to zenburn theme
 terminal/settings.json: starting dir
