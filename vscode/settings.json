@@ -29,5 +29,5 @@
     "explorer.confirmDragAndDrop": false,
     "breadcrumbs.enabled": true,
 
-    "powershell.integratedConsole.showOnStartup": false,
+    "powershell.integratedConsole.showOnStartup": false
 }
