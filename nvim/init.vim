@@ -7,6 +7,11 @@ set cursorline
 set autoindent tabstop=4 shiftwidth=4 expandtab
 set list lcs=tab:>-,space:·
 
+" keybindings
+nnoremap <Space> :
+nnoremap <S-Space> /
+nnoremap <C-Space> ?
+
 call plug#begin(stdpath('data').'\plugged')
 Plug 'yuttie/comfortable-motion.vim'
 call plug#end()
