@@ -20,6 +20,8 @@ map S <Plug>(easymotion-F)
 call plug#begin(stdpath('data').'\plugged')
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'airblade/vim-gitgutter'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " comfortable_motion.vim
