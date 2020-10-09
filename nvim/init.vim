@@ -7,6 +7,7 @@ set cursorline
 set colorcolumn=120
 set autoindent tabstop=4 shiftwidth=4 expandtab
 set list lcs=tab:>-,trail:•
+set clipboard^=unnamed
 
 " keybindings
 noremap <Space> :
