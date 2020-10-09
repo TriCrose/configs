@@ -4,16 +4,21 @@ set guifont=Fira\ Code\ Retina:h12.5
 set mouse=a
 set number relativenumber
 set cursorline
+set colorcolumn=120
 set autoindent tabstop=4 shiftwidth=4 expandtab
-set list lcs=tab:>-,space:·
+set list lcs=tab:>-,trail:•
 
 " keybindings
-nnoremap <Space> :
-nnoremap <S-Space> /
-nnoremap <C-Space> ?
+noremap <Space> :
+noremap <C-Space> /
+noremap <C-S-Space> ?
+inoremap jj <Esc>
+map s <Plug>(easymotion-f)
+map S <Plug>(easymotion-F)
 
 call plug#begin(stdpath('data').'\plugged')
 Plug 'yuttie/comfortable-motion.vim'
+Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 " comfortable_motion.vim
