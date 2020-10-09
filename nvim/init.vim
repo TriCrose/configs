@@ -1,6 +1,6 @@
 colorscheme codedark
 
-set guifont=Fira\ Code\ Retina:h12.5
+set guifont=Fira\ Code\ Retina:h13
 set mouse=a
 set number relativenumber
 set cursorline
@@ -22,5 +22,6 @@ Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 " comfortable_motion.vim
-let g:comfortable_motion_friction = 350.0
+let g:comfortable_motion_interval = 10
+let g:comfortable_motion_friction = 400.0
 let g:comfortable_motion_air_drag = 0.0
