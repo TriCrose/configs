@@ -16,6 +16,8 @@ Plug 'yuttie/comfortable-motion.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'sheerun/vim-polyglot'
 Plug 'joshdick/onedark.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'mhinz/vim-startify'
 call plug#end()
 
 " settings
