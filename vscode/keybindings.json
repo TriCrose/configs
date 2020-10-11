@@ -7,8 +7,15 @@
     {"key": "ctrl+pagedown", "command": "workbench.action.nextEditorInGroup"},
     {"key": "ctrl+pageup", "command": "workbench.action.previousEditorInGroup"},
 
+    // Editor management
     {"key": "ctrl+shift+pagedown", "command": "workbench.action.moveEditorRightInGroup"},
     {"key": "ctrl+shift+pageup", "command": "workbench.action.moveEditorLeftInGroup"},
+
+    // Editor group navigation
+    {"key": "alt+up", "command": "workbench.action.focusAboveGroup"},
+    {"key": "alt+down", "command": "workbench.action.focusBelowGroup"},
+    {"key": "alt+left", "command": "workbench.action.focusLeftGroup"},
+    {"key": "alt+right", "command": "workbench.action.focusRightGroup"},
 
     // Editor group management
     {"key": "ctrl+alt+s", "command": "workbench.action.editorLayoutSingle"},
@@ -20,6 +27,8 @@
     // Line manipulation
     {"key": "ctrl+enter", "when": "textInputFocus && !editorReadonly", "command": "editor.action.joinLines"},
     {"key": "shift+backspace", "when": "textInputFocus && !editorReadonly", "command": "editor.action.deleteLines"},
+    {"key": "ctrl+shift+up", "when": "editorTextFocus && !editorReadonly", "command": "editor.action.moveLinesUpAction"},
+    {"key": "ctrl+shift+down", "when": "editorTextFocus && !editorReadonly", "command": "editor.action.moveLinesDownAction"},
 
     // Terminals
     {"key": "alt+enter", "command": "workbench.action.terminal.toggleTerminal"},

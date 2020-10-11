@@ -3,7 +3,7 @@
     "editor.minimap.enabled": false,
     "editor.rulers": [120],
     "editor.fontFamily": "Fira Code Retina, Consolas, monospace",
-    "editor.fontSize": 13,
+    "editor.fontSize": 12,
     "editor.fontLigatures": true,
     "editor.cursorBlinking": "phase",
     "editor.renderLineHighlight": "all",
@@ -15,7 +15,7 @@
         "editor.lineHighlightBackground": "#303030"
     },
 
-    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.fontSize": 12,
     "terminal.integrated.fontWeight": "normal",
     "terminal.integrated.fontWeightBold": "normal",
     "terminal.integrated.cursorBlinking": true,
@@ -27,7 +27,7 @@
 
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "breadcrumbs.enabled": true,
+    "breadcrumbs.enabled": false,
 
     "powershell.integratedConsole.showOnStartup": false
 }
