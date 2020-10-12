@@ -2,7 +2,7 @@
 call plug#begin(stdpath('data').'\plugged')
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'joshdick/onedark.vim'
+Plug 'tomasiser/vim-code-dark'
 Plug 'mhinz/vim-startify'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
@@ -19,6 +19,8 @@ noremap q<Space> q:
 noremap s /
 noremap S ?
 noremap <A-n> *#
+inoremap <C-Space> <C-n>
+inoremap <C-S-Space> <C-p>
 
 " window keybindings
 noremap <A-h> <C-w>h
@@ -44,14 +46,14 @@ tnoremap <C-Tab> <C-\><C-n><C-PageDown>
 tnoremap <C-S-Tab> <C-\><C-n><C-PageUp>
 
 " other settings
-colorscheme onedark
+colorscheme codedark
 highlight EndOfBuffer guifg=bg
 match Error /\%121v.\+/
 let g:comfortable_motion_interval = 10
 let g:comfortable_motion_friction = 400.0
 let g:comfortable_motion_air_drag = 0.0
-let g:lightline = {'colorscheme': 'one'}
-set guifont=Fira\ Code\ Retina:h13
+let g:lightline = {'colorscheme': 'seoul256'}
+set guifont=Fira\ Code\ Retina:h12
 set mouse=a
 set number
 set autoindent tabstop=4 shiftwidth=4 expandtab
