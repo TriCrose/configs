@@ -12,6 +12,7 @@ call plug#end()
 " neovide settings
 let g:neovide_cursor_trail_size=0.3
 let g:neovide_refresh_rate=60
+let g:neovide_transparency=0.95
 
 " misc keybindings
 noremap <Space> :
@@ -21,6 +22,15 @@ noremap S ?
 noremap <A-n> *#
 inoremap <C-Space> <C-n>
 inoremap <C-S-Space> <C-p>
+
+noremap <F11> :call ToggleFullscreen()<CR>
+function! ToggleFullscreen()
+    if g:neovide_fullscreen
+        :let g:neovide_fullscreen=v:false
+    else
+        :let g:neovide_fullscreen=v:true
+    endif
+endfunction
 
 " window keybindings
 noremap <A-h> <C-w>h
