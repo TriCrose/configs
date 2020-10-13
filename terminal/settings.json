@@ -33,6 +33,8 @@
     {
         "defaults":
         {
+            "useAcrylic": true,
+            "acrylicOpacity": 0.8,
             "colorScheme": "One Half Dark",
             "cursorShape": "emptyBox",
             "fontFace": "Fira Code",

@@ -20,6 +20,11 @@ noremap q<Space> q:
 noremap s /
 noremap S ?
 noremap <A-n> *#
+noremap <C-A-s> <C-v>
+noremap <C-A-h> :noh<CR>
+noremap <C-v> P
+noremap £ ^
+inoremap <C-v> <C-r>*
 inoremap <C-Space> <C-n>
 inoremap <C-S-Space> <C-p>
 
@@ -33,6 +38,10 @@ function! ToggleFullscreen()
 endfunction
 
 " window keybindings
+noremap <A-left> <C-w>h
+noremap <A-down> <C-w>j
+noremap <A-up> <C-w>k
+noremap <A-right> <C-w>l
 noremap <A-h> <C-w>h
 noremap <A-j> <C-w>j
 noremap <A-k> <C-w>k
@@ -46,24 +55,9 @@ noremap <S-A-j> :res -7<CR>
 noremap <S-A-k> :res +7<CR>
 noremap <S-A-l> :vert res +7<CR>
 
-" terminal keybindings
-tnoremap <Esc> <C-\><C-n>
-tnoremap <A-h> <C-\><C-n><C-w>h
-tnoremap <A-j> <C-\><C-n><C-w>j
-tnoremap <A-k> <C-\><C-n><C-w>k
-tnoremap <A-l> <C-\><C-n><C-w>l
-tnoremap <C-Tab> <C-\><C-n><C-PageDown>
-tnoremap <C-S-Tab> <C-\><C-n><C-PageUp>
-
-" other settings
-colorscheme codedark
-highlight EndOfBuffer guifg=bg
-match Error /\%121v.\+/
-let g:comfortable_motion_interval = 10
-let g:comfortable_motion_friction = 400.0
-let g:comfortable_motion_air_drag = 0.0
-let g:lightline = {'colorscheme': 'seoul256'}
-set guifont=Fira\ Code\ Retina:h12
+set breakindent
+set showbreak=>>
+set guifont=Consolas:h13
 set mouse=a
 set number
 set autoindent tabstop=4 shiftwidth=4 expandtab
@@ -72,6 +66,16 @@ set clipboard^=unnamed
 set ignorecase
 set smartcase
 set autoread
+
+colorscheme codedark
+highlight EndOfBuffer guifg=bg
+match Error /\%121v.\+/
+
+let g:comfortable_motion_interval = 10
+let g:comfortable_motion_friction = 400.0
+let g:comfortable_motion_air_drag = 0.0
+let g:lightline = {'colorscheme': 'seoul256'}
+
 " TODO: save sessions on exit
 " TODO: file browser
 "           - searching with 's'
