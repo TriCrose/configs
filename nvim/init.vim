@@ -7,8 +7,6 @@ Plug 'mhinz/vim-startify'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
-Plug 'frazrepo/vim-rainbow'
-Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 call plug#end()
 
@@ -22,18 +20,24 @@ noremap <Space> :
 noremap q<Space> q:
 noremap s /
 noremap S ?
-noremap <A-n> *#
+noremap <A-n> #*
 noremap <C-A-s> <C-v>
-noremap <C-A-h> :noh<CR>
 noremap <C-v> P
 noremap £ ^
 noremap <CR> :GitGutterFold<CR>
-" TODO: go to next/prev hunk
 " TODO mapping to open/select nerdtree
 inoremap <C-v> <C-r>*
 inoremap <C-Space> <C-n>
 inoremap <C-S-Space> <C-p>
 
+" terminal keybindings
+" TODO: ctrl+c exits teminal mode
+" TODO: ctrl+shift+c does ctrl+c in the terminl
+" TODO: alt+[h,j,k,l] and alt+[left,up,down,right] should work in terminal mode
+" TODO: focusing the terminl should immediately put you in terminal mode
+" TODO: ctrl+v for paste
+
+" fullcreen toggle
 noremap <F11> :call ToggleFullscreen()<CR>
 function! ToggleFullscreen()
     if g:neovide_fullscreen
@@ -62,7 +66,7 @@ noremap <S-A-k> :res +7<CR>
 noremap <S-A-l> :vert res +7<CR>
 
 set breakindent
-set showbreak=>>>
+set showbreak=>>
 set guifont=Fira\ Code\ Retina:h12
 set updatetime=100
 set mouse=a
@@ -73,24 +77,23 @@ set clipboard^=unnamed
 set ignorecase
 set smartcase
 set autoread
+set signcolumn=no
 
 colorscheme codedark
 highlight EndOfBuffer guifg=bg
-match Error /\%121v.\+/
 
 let g:comfortable_motion_interval = 10
 let g:comfortable_motion_friction = 400.0
 let g:comfortable_motion_air_drag = 0.0
 let g:lightline = {'colorscheme': 'seoul256'}
-let g:rainbow_active = 1
 let g:gitgutter_signs = 0
 let g:gitgutter_highlight_lines = 0
 let g:gitgutter_highlight_linenrs = 1
 
 highlight GitGutterAddLineNr guifg=#a0eaa0
-highlight GitGutterChangeLineNr guifg=#a0a0ea
-highlight GitGutterChangeDeleteLineNr guifg=#a0a0ea
-highlight GitGutterDeleteLineNr guifg=#eaa0a0
+highlight GitGutterChangeLineNr guifg=#5fa1d8
+highlight GitGutterChangeDeleteLineNr guifg=#5fa1d8
+highlight GitGutterDeleteLineNr guifg=#ea8080
 
 " TODO: save sessions on exit
 " TODO: file browser
