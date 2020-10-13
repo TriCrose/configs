@@ -62,7 +62,7 @@ noremap <S-A-k> :res +7<CR>
 noremap <S-A-l> :vert res +7<CR>
 
 set breakindent
-set showbreak=->
+set showbreak=>>>
 set guifont=Fira\ Code\ Retina:h12
 set updatetime=100
 set mouse=a
@@ -87,10 +87,10 @@ let g:gitgutter_signs = 0
 let g:gitgutter_highlight_lines = 0
 let g:gitgutter_highlight_linenrs = 1
 
-highlight GitGutterAddLineNr guifg=#00ff00
-highlight GitGutterChangeLineNr guifg=#1515f1
-highlight GitGutterChangeDeleteLineNr guifg=##1515f1
-highlight GitGutterDeleteLineNr guifg=#ff0000
+highlight GitGutterAddLineNr guifg=#a0eaa0
+highlight GitGutterChangeLineNr guifg=#a0a0ea
+highlight GitGutterChangeDeleteLineNr guifg=#a0a0ea
+highlight GitGutterDeleteLineNr guifg=#eaa0a0
 
 " TODO: save sessions on exit
 " TODO: file browser
