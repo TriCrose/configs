@@ -7,6 +7,8 @@ Plug 'mhinz/vim-startify'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
+Plug 'frazrepo/vim-rainbow'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 " neovide settings
@@ -75,6 +77,7 @@ let g:comfortable_motion_interval = 10
 let g:comfortable_motion_friction = 400.0
 let g:comfortable_motion_air_drag = 0.0
 let g:lightline = {'colorscheme': 'seoul256'}
+let g:rainbow_active = 1
 
 " TODO: save sessions on exit
 " TODO: file browser
@@ -83,3 +86,4 @@ let g:lightline = {'colorscheme': 'seoul256'}
 "           - insert mode by default
 "           - esc to quit insert mode
 "           - ctrl+c should be forwarded properly
+" TODO: better keybinds for vim-surround (e.g. csx to surround word in x)
