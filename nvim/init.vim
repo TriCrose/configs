@@ -9,6 +9,7 @@ Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'frazrepo/vim-rainbow'
 Plug 'jiangmiao/auto-pairs'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " neovide settings
@@ -26,6 +27,9 @@ noremap <C-A-s> <C-v>
 noremap <C-A-h> :noh<CR>
 noremap <C-v> P
 noremap £ ^
+noremap <CR> :GitGutterFold<CR>
+" TODO: go to next/prev hunk
+" TODO mapping to open/select nerdtree
 inoremap <C-v> <C-r>*
 inoremap <C-Space> <C-n>
 inoremap <C-S-Space> <C-p>
@@ -58,8 +62,9 @@ noremap <S-A-k> :res +7<CR>
 noremap <S-A-l> :vert res +7<CR>
 
 set breakindent
-set showbreak=>>
-set guifont=Consolas:h13
+set showbreak=->
+set guifont=Fira\ Code\ Retina:h12
+set updatetime=100
 set mouse=a
 set number
 set autoindent tabstop=4 shiftwidth=4 expandtab
@@ -78,6 +83,14 @@ let g:comfortable_motion_friction = 400.0
 let g:comfortable_motion_air_drag = 0.0
 let g:lightline = {'colorscheme': 'seoul256'}
 let g:rainbow_active = 1
+let g:gitgutter_signs = 0
+let g:gitgutter_highlight_lines = 0
+let g:gitgutter_highlight_linenrs = 1
+
+highlight GitGutterAddLineNr guifg=#00ff00
+highlight GitGutterChangeLineNr guifg=#1515f1
+highlight GitGutterChangeDeleteLineNr guifg=##1515f1
+highlight GitGutterDeleteLineNr guifg=#ff0000
 
 " TODO: save sessions on exit
 " TODO: file browser
