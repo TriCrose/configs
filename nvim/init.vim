@@ -25,7 +25,6 @@ noremap <C-v> P
 noremap <C-a> <Home>
 noremap <C-s> <End>
 noremap <CR> :GitGutterFold<CR>
-" TODO mapping to open/select nerdtree
 inoremap <C-a> <Home>
 inoremap <C-s> <End>
 inoremap <C-Space> <C-n>
@@ -34,6 +33,11 @@ inoremap <C-v> <C-r>*
 cnoremap <C-v> <C-r>*
 cnoremap <C-a> <Home>
 cnoremap <C-s> <End>
+
+" nerdtree keybindings
+" TODO: mapping to open/select nerdtree
+" TODO: use s/gs for horizontal splits and v/gv for vertical
+" TODO: ensure that s/S works for searching
 
 " terminal keybindings
 tnoremap <C-c> <C-\><C-n>
@@ -45,7 +49,7 @@ tnoremap <C-u> <Esc>
 tnoremap <C-w> <C-S-Left><Delete>
 " TODO: focus terminal from any other window
 
-" fullcreen toggle
+" fullscreen toggle
 noremap <F11> :call ToggleFullscreen()<CR>
 function! ToggleFullscreen()
     if g:neovide_fullscreen
@@ -105,8 +109,6 @@ highlight GitGutterChangeDeleteLineNr guifg=#5fa1d8
 highlight GitGutterDeleteLineNr guifg=#ea8080
 
 " TODO: save sessions on exit
-" TODO: file browser
-"           - searching with 's'
 " TODO: use powershell as terminal
 "           - insert mode by default
 "           - esc to quit insert mode
