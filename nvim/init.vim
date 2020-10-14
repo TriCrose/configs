@@ -21,22 +21,26 @@ noremap q<Space> q:
 noremap s /
 noremap S ?
 noremap <A-n> #*
-noremap <C-A-s> <C-v>
 noremap <C-v> P
-noremap £ ^
+noremap <C-a> <Home>
+noremap <C-s> <End>
 noremap <CR> :GitGutterFold<CR>
 " TODO mapping to open/select nerdtree
-inoremap <C-v> <C-r>*
-cnoremap <C-v> <C-r>*
+inoremap <C-a> <Home>
+inoremap <C-s> <End>
 inoremap <C-Space> <C-n>
 inoremap <C-S-Space> <C-p>
+inoremap <C-v> <C-r>*
+cnoremap <C-v> <C-r>*
+cnoremap <C-a> <Home>
+cnoremap <C-s> <End>
 
 " terminal keybindings
 tnoremap <C-c> <C-\><C-n>
 tnoremap <C-d> <C-c>
 tnoremap <C-v> <C-\><C-n>Pi
-tnoremap <C-b> <Home>
-tnoremap <C-e> <End>
+tnoremap <C-a> <Home>
+tnoremap <C-s> <End>
 tnoremap <C-u> <Esc>
 tnoremap <C-w> <C-S-Left><Delete>
 " TODO: focus terminal from any other window
