@@ -27,15 +27,19 @@ noremap £ ^
 noremap <CR> :GitGutterFold<CR>
 " TODO mapping to open/select nerdtree
 inoremap <C-v> <C-r>*
+cnoremap <C-v> <C-r>*
 inoremap <C-Space> <C-n>
 inoremap <C-S-Space> <C-p>
 
 " terminal keybindings
-" TODO: ctrl+c exits teminal mode
-" TODO: ctrl+shift+c does ctrl+c in the terminl
-" TODO: alt+[h,j,k,l] and alt+[left,up,down,right] should work in terminal mode
-" TODO: focusing the terminl should immediately put you in terminal mode
-" TODO: ctrl+v for paste
+tnoremap <C-c> <C-\><C-n>
+tnoremap <C-d> <C-c>
+tnoremap <C-v> <C-\><C-n>Pi
+tnoremap <C-b> <Home>
+tnoremap <C-e> <End>
+tnoremap <C-u> <Esc>
+tnoremap <C-w> <C-S-Left><Delete>
+" TODO: focus terminal from any other window
 
 " fullcreen toggle
 noremap <F11> :call ToggleFullscreen()<CR>
@@ -78,6 +82,7 @@ set ignorecase
 set smartcase
 set autoread
 set signcolumn=no
+set shell=pwsh
 
 colorscheme codedark
 highlight EndOfBuffer guifg=bg
