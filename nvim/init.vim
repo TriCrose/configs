@@ -33,21 +33,10 @@ inoremap <C-v> <C-r>*
 cnoremap <C-v> <C-r>*
 cnoremap <C-a> <Home>
 cnoremap <C-s> <End>
-
 " nerdtree keybindings
 " TODO: mapping to open/select nerdtree
 " TODO: use s/gs for horizontal splits and v/gv for vertical
 " TODO: ensure that s/S works for searching
-
-" terminal keybindings
-tnoremap <C-c> <C-\><C-n>
-tnoremap <C-d> <C-c>
-tnoremap <C-v> <C-\><C-n>Pi
-tnoremap <C-a> <Home>
-tnoremap <C-s> <End>
-tnoremap <C-u> <Esc>
-tnoremap <C-w> <C-S-Left><Delete>
-" TODO: focus terminal from any other window
 
 " fullscreen toggle
 noremap <F11> :call ToggleFullscreen()<CR>
@@ -76,6 +65,38 @@ noremap <S-A-h> :vert res -7<CR>
 noremap <S-A-j> :res -7<CR>
 noremap <S-A-k> :res +7<CR>
 noremap <S-A-l> :vert res +7<CR>
+
+" terminal keybindings
+tnoremap <C-c> <C-\><C-n>
+tnoremap <C-d> <C-c>
+tnoremap <C-v> <C-\><C-n>Pi
+tnoremap <C-a> <Home>
+tnoremap <C-s> <End>
+tnoremap <C-u> <Esc>
+tnoremap <C-w> <C-S-Left><Delete>
+" TODO: fix multiline paste
+" TODO: focus terminal from any other window
+
+" terminal keybindings for window navigation
+tnoremap <A-left> <C-\><C-n><C-w>h
+tnoremap <A-down> <C-\><C-n><C-w>j
+tnoremap <A-up> <C-\><C-n><C-w>k
+tnoremap <A-right> <C-\><C-n><C-w>l
+tnoremap <A-h> <C-\><C-n><C-w>h
+tnoremap <A-j> <C-\><C-n><C-w>j
+tnoremap <A-k> <C-\><C-n><C-w>k
+tnoremap <A-l> <C-\><C-n><C-w>l
+tnoremap <A-u> <C-\><C-n><C-w>t
+tnoremap <A-i> <C-\><C-n><C-w>b
+tnoremap <C-Tab> <C-\><C-n><C-PageDown>
+tnoremap <C-S-Tab> <C-\><C-n><C-PageUp>
+tnoremap <S-A-h> <C-\><C-n>:vert res -7<CR>
+tnoremap <S-A-j> <C-\><C-n>:res -7<CR>
+tnoremap <S-A-k> <C-\><C-n>:res +7<CR>
+tnoremap <S-A-l> <C-\><C-n>:vert res +7<CR>
+
+" go to insert mode on entering a terminal
+autocmd WinEnter,TermOpen term://* startinsert
 
 set breakindent
 set showbreak=>>
