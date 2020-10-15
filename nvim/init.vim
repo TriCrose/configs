@@ -24,17 +24,14 @@ noremap <Tab> }
 noremap <S-Tab> {
 noremap <A-n> #*
 noremap <C-v> P
-noremap <C-a> <Home>
-noremap <C-s> <End>
+noremap <C-a> GVgg
 noremap <A-CR> :GitGutterFold<CR>
-inoremap <C-a> <Home>
-inoremap <C-s> <End>
 inoremap <C-Space> <C-n>
 inoremap <C-S-Space> <C-p>
 inoremap <C-v> <C-r>*
+inoremap <C-Backspace> <C-w>
 cnoremap <C-v> <C-r>*
-cnoremap <C-a> <Home>
-cnoremap <C-s> <End>
+cnoremap <C-Backspace> <C-w>
 " TODO: command mode yank
 " nerdtree keybindings
 " TODO: mapping to open/select nerdtree
@@ -70,36 +67,12 @@ noremap <S-A-k> :res +7<CR>
 noremap <S-A-l> :vert res +7<CR>
 
 " terminal keybindings
-tnoremap <C-c> <C-\><C-n>
-tnoremap <C-d> <C-c>
-tnoremap <C-v> <C-\><C-n>Pi
-tnoremap <C-a> <Home>
-tnoremap <C-s> <End>
-tnoremap <C-u> <Esc>
-tnoremap <C-w> <C-S-Left><Delete>
 " TODO: fix multiline paste
+tnoremap <C-v> <C-\><C-n>Pi
+tnoremap <C-u> <Esc>
+tnoremap <Esc> <C-\><C-n>
+tnoremap <C-Backspace> <C-S-Left><Delete>
 " TODO: focus terminal from any other window
-
-" terminal keybindings for window navigation
-tnoremap <A-left> <C-\><C-n><C-w>h
-tnoremap <A-down> <C-\><C-n><C-w>j
-tnoremap <A-up> <C-\><C-n><C-w>k
-tnoremap <A-right> <C-\><C-n><C-w>l
-tnoremap <A-h> <C-\><C-n><C-w>h
-tnoremap <A-j> <C-\><C-n><C-w>j
-tnoremap <A-k> <C-\><C-n><C-w>k
-tnoremap <A-l> <C-\><C-n><C-w>l
-tnoremap <A-u> <C-\><C-n><C-w>t
-tnoremap <A-i> <C-\><C-n><C-w>b
-tnoremap <C-Tab> <C-\><C-n><C-PageDown>
-tnoremap <C-S-Tab> <C-\><C-n><C-PageUp>
-tnoremap <S-A-h> <C-\><C-n>:vert res -7<CR>
-tnoremap <S-A-j> <C-\><C-n>:res -7<CR>
-tnoremap <S-A-k> <C-\><C-n>:res +7<CR>
-tnoremap <S-A-l> <C-\><C-n>:vert res +7<CR>
-
-" go to insert mode on entering a terminal
-au WinEnter,TermOpen term://* startinsert
 
 set breakindent
 set showbreak=>>
