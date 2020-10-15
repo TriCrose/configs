@@ -18,13 +18,15 @@ let g:neovide_transparency=0.95
 " misc keybindings
 noremap <Space> :
 noremap q<Space> q:
-noremap s /
-noremap S ?
+noremap <CR> /
+noremap <S-CR> ?
+noremap <Tab> }
+noremap <S-Tab> {
 noremap <A-n> #*
 noremap <C-v> P
 noremap <C-a> <Home>
 noremap <C-s> <End>
-noremap <CR> :GitGutterFold<CR>
+noremap <A-CR> :GitGutterFold<CR>
 inoremap <C-a> <Home>
 inoremap <C-s> <End>
 inoremap <C-Space> <C-n>
@@ -33,6 +35,7 @@ inoremap <C-v> <C-r>*
 cnoremap <C-v> <C-r>*
 cnoremap <C-a> <Home>
 cnoremap <C-s> <End>
+" TODO: command mode yank
 " nerdtree keybindings
 " TODO: mapping to open/select nerdtree
 " TODO: use s/gs for horizontal splits and v/gv for vertical
@@ -96,7 +99,7 @@ tnoremap <S-A-k> <C-\><C-n>:res +7<CR>
 tnoremap <S-A-l> <C-\><C-n>:vert res +7<CR>
 
 " go to insert mode on entering a terminal
-autocmd WinEnter,TermOpen term://* startinsert
+au WinEnter,TermOpen term://* startinsert
 
 set breakindent
 set showbreak=>>
@@ -115,6 +118,7 @@ set shell=pwsh
 
 colorscheme codedark
 highlight EndOfBuffer guifg=bg
+highlight Underlined guisp=#cacaca
 
 let g:comfortable_motion_interval = 10
 let g:comfortable_motion_friction = 400.0

@@ -1,0 +1,38 @@
+forcing motions (place between motion and operator):
+ - v -> force operator to work characterwise
+ - V -> force operator to work linewise
+ - ^V -> force operator to work blockwise
+
+motions:
+ - zf -> create fold (space -> unfold, zR -> unfold all)
+ - | -> to column n
+ - (/) -> move in sentences
+ - {/} -> move in paragraphs
+
+text object selections (visual mode or after operator):
+ - iw -> inner word
+ - aw -> "a" word (includes whitespace)
+ - iW, aW, etc.
+ - is/as -> sentence
+ - ip/ap -> paragraph
+ - i[/a[ -> within []s
+ - etc. for (,{,<,",',`
+ - can also specify "b" instead of "(" and "B" instead of "{"
+
+jumps:
+ - `` -> prev cursor position before jump
+ - :ju -> print jump list
+ - ^O/^I -> older/newer in jump list
+ - :changes -> print the change list
+ - g;/g, -> older/newer in change list
+
+visual mode:
+ - ~ -> switch case
+ - u -> conver to lowercase
+ - U -> conver to uppercase
+
+vim-surround:
+ - ds[char] -> delete surrounding [char]s
+ - cs[char1][char2] -> change surrounding [char1]s to [char2]s
+ - ysiw[char] -> surround current word with [char] (the iw is a text object selection)
+ - yss[char] -> surround current line with [char]
