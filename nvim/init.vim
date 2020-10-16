@@ -79,7 +79,7 @@ set showbreak=>>
 set guifont=Fira\ Code\ Retina:h12
 set updatetime=100
 set mouse=a
-set number
+set relativenumber
 set autoindent tabstop=4 shiftwidth=4 expandtab
 set list lcs=trail:•,tab:>-
 set clipboard^=unnamed
