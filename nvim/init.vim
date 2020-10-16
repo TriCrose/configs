@@ -109,7 +109,7 @@ let g:gitgutter_map_keys = 0
 
 highlight GitGutterAddLineNr guifg=#a0eaa0
 highlight GitGutterChangeLineNr guifg=#5fa1d8
-highlight GitGutterChangeDeleteLineNr guifg=#c083bat
+highlight GitGutterChangeDeleteLineNr guifg=#c083ba
 highlight GitGutterDeleteLineNr guifg=#ea8080
 
 " TODO: save sessions on exit
