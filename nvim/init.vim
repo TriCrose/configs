@@ -78,8 +78,7 @@ tnoremap <Esc> <C-\><C-n>
 tnoremap <C-Backspace> <C-S-Left><Delete>
 " TODO: focus terminal from any other window
 
-set breakindent
-set showbreak=>>
+set breakindent showbreak=>>
 set guifont=Fira\ Code\ Retina:h12
 set updatetime=100
 set mouse=a
@@ -87,13 +86,12 @@ set relativenumber
 set autoindent tabstop=4 shiftwidth=4 expandtab
 set list lcs=trail:•,tab:>-
 set clipboard^=unnamed
-set ignorecase
-set smartcase
+set ignorecase smartcase
 set autoread
 set signcolumn=no
 set shell=pwsh
-set splitright
-set splitbelow
+set splitright splitbelow
+set noshowmode
 
 colorscheme codedark
 highlight EndOfBuffer guifg=bg
