@@ -106,6 +106,8 @@ let g:lightline = {'colorscheme': 'seoul256'}
 let g:gitgutter_signs = 0
 let g:gitgutter_highlight_lines = 0
 let g:gitgutter_highlight_linenrs = 1
+" turn off gitgutter bindings so <Leader>h is free
+let g:gitgutter_map_keys = 0
 
 highlight GitGutterAddLineNr guifg=#a0eaa0
 highlight GitGutterChangeLineNr guifg=#5fa1d8
