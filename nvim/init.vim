@@ -1,6 +1,5 @@
 " plugins
 call plug#begin(stdpath('data').'\plugged')
-Plug 'yuttie/comfortable-motion.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tomasiser/vim-code-dark'
 Plug 'mhinz/vim-startify'
@@ -8,6 +7,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
+Plug 'psliwka/vim-smoothie'
 call plug#end()
 
 " neovide settings
@@ -26,6 +26,7 @@ noremap <A-n> #*
 noremap <C-v> P
 noremap <C-a> GVgg
 noremap <A-CR> :GitGutterFold<CR>
+noremap <C-s> :NERDTreeToggleVCS<CR>
 inoremap <C-Space> <C-n>
 inoremap <C-S-Space> <C-p>
 inoremap <C-v> <C-r>*
@@ -33,10 +34,7 @@ inoremap <C-Backspace> <C-w>
 cnoremap <C-v> <C-r>*
 cnoremap <C-Backspace> <C-w>
 " TODO: command mode yank
-" nerdtree keybindings
-" TODO: mapping to open/select nerdtree
-" TODO: use s/gs for horizontal splits and v/gv for vertical
-" TODO: ensure that s/S works for searching
+" TODO: nerdtree: fix enter not working for search
 
 " fullscreen toggle
 noremap <F11> :call ToggleFullscreen()<CR>
@@ -65,6 +63,12 @@ noremap <S-A-h> :vert res -7<CR>
 noremap <S-A-j> :res -7<CR>
 noremap <S-A-k> :res +7<CR>
 noremap <S-A-l> :vert res +7<CR>
+
+" split terminal left, down, up, right
+nnoremap <Leader>h :aboveleft vsplit<CR>:terminal<CR>
+nnoremap <Leader>j :split+terminal<CR>
+nnoremap <Leader>k :aboveleft split<CR>:terminal<CR>
+nnoremap <Leader>l :vsplit+terminal<CR>
 
 " terminal keybindings
 " TODO: fix multiline paste
