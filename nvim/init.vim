@@ -88,6 +88,8 @@ set smartcase
 set autoread
 set signcolumn=no
 set shell=pwsh
+set splitright
+set splitbelow
 
 colorscheme codedark
 highlight EndOfBuffer guifg=bg
