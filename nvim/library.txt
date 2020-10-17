@@ -1,0 +1,1 @@
+<S-o><CR> -> Use this if the cursor is on the single blank line between two paragraphs to create the whitespace for a new one. Flows nicely with <Tab>/<S-Tab> to move between paragraphs.
