@@ -35,7 +35,6 @@ inoremap <C-Backspace> <C-w>
 cnoremap <C-v> <C-r>*
 cnoremap <C-Backspace> <C-w>
 " TODO: command mode yank
-" TODO: nerdtree: fix enter not working for search
 
 " fullscreen toggle
 noremap <F11> :call ToggleFullscreen()<CR>
@@ -116,6 +115,12 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("v")': ['<c-v>', '<RightMouse>'],
     \ 'PrtDeleteWord()': ['<C-Backspace>'],
 \}
+
+let g:NERDTreeMapOpenVSplit='v'
+let g:NERDTreeMapPreviewVSplit='gv'
+let g:NERDTreeMapOpenSplit='s'
+let g:NERDTreeMapPreviewSplit='gs'
+let g:NERDTreeMapCustomOpen=''
 
 highlight GitGutterAddLineNr guifg=#a0eaa0
 highlight GitGutterChangeLineNr guifg=#5fa1d8
