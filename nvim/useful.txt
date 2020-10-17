@@ -28,11 +28,30 @@ jumps:
 
 visual mode:
  - ~ -> switch case
- - u -> conver to lowercase
- - U -> conver to uppercase
+ - u -> convert to lowercase
+ - U -> convert to uppercase
 
 vim-surround:
  - ds[char] -> delete surrounding [char]s
  - cs[char1][char2] -> change surrounding [char1]s to [char2]s
  - ysiw[char] -> surround current word with [char] (the iw is a text object selection)
  - yss[char] -> surround current line with [char]
+
+buffers:
+ - the "alternate buffer" is specific to each buffer
+ - inactive buffers do not contain anything and are not visible
+ - ped[it] {file} -> open a file the preview window
+ - pc[lose] -> close any preview window currently open
+ - % -> the buffer in the current window
+ - # -> the alternate buffer
+ - + -> the buffer has unwritten changes
+ - h -> the buffer is hidden (i.e. not visible in a window)
+ - a -> the buffer is active (i.e. visible in a window)
+ - u -> the buffer is unlisted (won't show up on :ls)
+ - - -> the buffer has 'modifiable' turned off
+ - = -> the buffer is readonly
+ - x -> the buffer has read errors
+ - R/F -> the buffer is a terminal and is runnning/finished a job
+
+misc:
+ - :so -> shorthand for :source

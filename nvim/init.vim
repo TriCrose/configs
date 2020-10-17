@@ -23,7 +23,6 @@ noremap <S-CR> ?
 noremap <Tab> }
 noremap <S-Tab> {
 noremap <A-n> #*
-noremap <C-v> P
 noremap <C-a> GVgg
 noremap <A-CR> :GitGutterFold<CR>
 noremap <C-s> :NERDTreeToggleVCS<CR>
@@ -57,18 +56,18 @@ noremap <A-k> <C-w>k
 noremap <A-l> <C-w>l
 noremap <A-u> <C-w>t
 noremap <A-i> <C-w>b
-noremap <C-Tab> <C-PageDown>
-noremap <C-S-Tab> <C-PageUp>
+noremap <C-Tab> :bn<CR>
+noremap <C-S-Tab> :bp<CR>
 noremap <S-A-h> :vert res -7<CR>
 noremap <S-A-j> :res -7<CR>
 noremap <S-A-k> :res +7<CR>
 noremap <S-A-l> :vert res +7<CR>
 
-" split terminal left, down, up, right
-nnoremap <Leader>h :aboveleft vsplit<CR>:terminal<CR>
-nnoremap <Leader>j :split+terminal<CR>
-nnoremap <Leader>k :aboveleft split<CR>:terminal<CR>
-nnoremap <Leader>l :vsplit+terminal<CR>
+" split left, down, up, right
+nnoremap <Leader>h :aboveleft vsplit<CR>
+nnoremap <Leader>j :split<CR>
+nnoremap <Leader>k :aboveleft split<CR>
+nnoremap <Leader>l :vsplit<CR>
 
 " terminal keybindings
 " TODO: fix multiline paste
