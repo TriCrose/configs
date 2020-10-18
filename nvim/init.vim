@@ -88,7 +88,6 @@ set autoread
 set signcolumn=no
 set shell=cmd
 set splitright splitbelow
-set noshowmode
 
 colorscheme codedark
 highlight EndOfBuffer guifg=bg
@@ -104,6 +103,8 @@ let g:gitgutter_highlight_linenrs = 1
 " turn off gitgutter bindings so <Leader>h is free
 " TODO: fix gitgutter hunk preview not working
 let g:gitgutter_map_keys = 0
+let g:startify_session_persistence = 1
+
 let g:ctrlp_map = '<C-Space>'
 let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:ctrlp_by_filename = 1
