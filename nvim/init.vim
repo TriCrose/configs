@@ -1,3 +1,4 @@
+" TODO: fix gitgutter preview colours
 " TODO: load most recent session on startup
 " TODO: command mode yank
 
@@ -10,7 +11,7 @@ set breakindent showbreak=>>
 set guifont=Fira\ Code\ Retina:h12
 set updatetime=100
 set mouse=a
-set number
+set relativenumber
 set signcolumn=no
 set autoindent tabstop=4 shiftwidth=4 expandtab
 set list lcs=trail:•,tab:>-
@@ -18,11 +19,6 @@ set clipboard^=unnamed
 set ignorecase smartcase
 set autoread
 set splitright splitbelow
-
-" Colours
-colorscheme codedark
-highlight EndOfBuffer guifg=bg
-highlight Underlined guisp=#cacaca
 
 " Neovide GUI settings
 let g:neovide_cursor_trail_size=0.3
@@ -35,7 +31,6 @@ let g:neovide_transparency=0.95
 
 " Use Space for commands instead of :
 noremap <Space> :
-noremap q<Space> q:
 
 " Use Enter/Shift+Enter to search
 noremap <CR> /
@@ -119,6 +114,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'psliwka/vim-smoothie'
 Plug 'kien/ctrlp.vim'
 call plug#end()
+
+" Colours
+colorscheme codedark
+highlight EndOfBuffer guifg=bg
+highlight Underlined guisp=#cacaca
 
 " Colour the line numbers based on the git diff
 let g:gitgutter_signs = 0
