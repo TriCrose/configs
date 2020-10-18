@@ -55,3 +55,4 @@ buffers:
 
 misc:
  - :so -> shorthand for :source
+ - K -> search for a help page on the word under the cursor
