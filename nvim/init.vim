@@ -29,10 +29,10 @@ let g:neovide_transparency=0.95
 " GENERAL KEY MAPPINGS
 "-----------------------------------
 
-" Use Space for commands instead of :
+" Space to enter command mode
 noremap <Space> :
 
-" Use Enter/Shift+Enter to search
+" Enter/Shift+Enter to search
 noremap <CR> /
 noremap <S-CR> ?
 
@@ -100,6 +100,19 @@ noremap <C-Tab> :bn<CR>
 noremap <C-S-Tab> :bp<CR>
 
 "-----------------------------------
+" KEY MAPPINGS FOR TERMINALS
+"-----------------------------------
+
+" Escape to exit terminal mode
+tnoremap <Esc> <C-\><C-n>
+
+" Ctrl+u to clear the line
+tnoremap <C-u> <Esc>
+
+" Ctrl+Bksp would otherwise insert a keycode
+tnoremap <C-Backspace> <Backspace>
+
+"-----------------------------------
 " PLUGINS
 "-----------------------------------
 
@@ -117,7 +130,11 @@ call plug#end()
 
 " Colours
 colorscheme codedark
+
+" Make the end of buffer line marks disappear
 highlight EndOfBuffer guifg=bg
+
+" Make underlined text look nicer
 highlight Underlined guisp=#cacaca
 
 " Colour the line numbers based on the git diff
@@ -129,7 +146,6 @@ highlight GitGutterChangeLineNr guifg=#5fa1d8
 highlight GitGutterChangeDeleteLineNr guifg=#c083ba
 highlight GitGutterDeleteLineNr guifg=#ea8080
 
-" Config for CtrlP
 let g:ctrlp_map = '<C-Space>'
 let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:ctrlp_by_filename = 1

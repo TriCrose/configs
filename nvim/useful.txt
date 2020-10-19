@@ -53,6 +53,14 @@ buffers:
  - x -> the buffer has read errors
  - R/F -> the buffer is a terminal and is runnning/finished a job
 
+registers:
+- "x[d,c,y,p,etc.] -> interchange text with register x
+- 10 types of register
+
 misc:
  - :so -> shorthand for :source
  - K -> search for a help page on the word under the cursor
+ - J -> join lines with space
+ - gJ -> join line no space
+ - xp -> transpose two letters
+ - <S-o><CR> -> Use this if the cursor is on the single blank line between two paragraphs to create the whitespace for a new one. Flows nicely with <Tab>/<S-Tab> to move between paragraphs.
