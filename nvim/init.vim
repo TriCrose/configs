@@ -15,7 +15,7 @@ set relativenumber
 set signcolumn=no
 set autoindent tabstop=4 shiftwidth=4 expandtab
 set list lcs=trail:•,tab:>-
-set clipboard^=unnamed
+set clipboard=unnamedplus
 set ignorecase smartcase
 set autoread
 set splitright splitbelow
@@ -53,9 +53,9 @@ noremap <Leader>p :source $MYVIMRC<CR>:PlugClean<CR>:PlugInstall<CR>
 inoremap <C-Space> <C-n>
 inoremap <C-S-Space> <C-p>
 
-" Ctrl+V to paste (insert/command mode)
-inoremap <C-v> <C-r>"
-cnoremap <C-v> <C-r>"
+" Ctrl+V to paste from clipboard (insert/command mode)
+inoremap <C-v> <C-r>+
+cnoremap <C-v> <C-r>+
 
 " Ctrl+Backspace to delete the previous word (insert/command mode)
 inoremap <C-Backspace> <C-w>
