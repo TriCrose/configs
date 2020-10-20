@@ -54,8 +54,28 @@ buffers:
  - R/F -> the buffer is a terminal and is runnning/finished a job
 
 registers:
-- "x[d,c,y,p,etc.] -> interchange text with register x
-- 10 types of register
+ - "x[d,c,y,p,etc.] -> interchange text with register x
+ - 10 types of register
+
+current dir:
+ - :cd -> set current dir
+ - :tc[d] -> set current directory for the tab and window
+ - :lc[d] -> set local current directory for window
+
+searching:
+ - :grep -si <regex> <file_paths> -> search for regex using findstr (on Windows)
+ - -s option -> search recursively through subdirectories
+ - -i option -> case insensitive
+ - <cword> -> expands to the current word under the cursor
+ - <cWORD> -> expands to the current WORD under the cursor
+ - <cfile> -> expands to current path under the cursor
+
+marks:
+ - m{a-zA-Z} -> set mark {a-zA-Z} to the current cursor position
+ - `{a-zA-Z} -> goto mark {a-zA-Z} characterwise
+ - '{a-zA-Z} -> goto mark {a-zA-Z} linewise
+ - lowercase marks exist per file
+ - uppercase marks are valid between files
 
 misc:
  - :so -> shorthand for :source
@@ -64,3 +84,6 @@ misc:
  - gJ -> join line no space
  - xp -> transpose two letters
  - <S-o><CR> -> Use this if the cursor is on the single blank line between two paragraphs to create the whitespace for a new one. Flows nicely with <Tab>/<S-Tab> to move between paragraphs.
+ - :cd %:p:h -> change directory to the parent of the currently opened file
+ - :set scrollbind -> bind scrolling across every window that has this set
+ - gf -> (goto file) edit the file whose path name is under the cursor (or in the current selection)
