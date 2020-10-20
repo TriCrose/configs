@@ -37,10 +37,6 @@ noremap <Space> :
 noremap <CR> /
 noremap <S-CR> ?
 
-" Tab/Shift+Tab to move through paragraphs
-noremap <Tab> }
-noremap <S-Tab> {
-
 " Alt+Enter to show git changes
 noremap <A-CR> :GitGutterFold<CR>
 
@@ -96,9 +92,13 @@ noremap <A-down> :res -7<CR>
 noremap <A-up> :res +7<CR>
 noremap <A-right> :vert res +7<CR>
 
-" Ctrl+Tab/Ctrl+Shift+Tab to navigate buffers
-noremap <C-Tab> :bn<CR>
-noremap <C-S-Tab> :bp<CR>
+" Tab/Shift+Tab to move through buffers
+noremap <Tab> :bn<CR>
+noremap <S-Tab> :bp<CR>
+
+" Ctrl+Tab/Ctrl+Shift+Tab to move through tab pages
+noremap <C-Tab> :tabn<CR>
+noremap <C-S-Tab> :tabp<CR>
 
 "-----------------------------------
 " KEY MAPPINGS FOR TERMINALS

@@ -87,3 +87,4 @@ misc:
  - :cd %:p:h -> change directory to the parent of the currently opened file
  - :set scrollbind -> bind scrolling across every window that has this set
  - gf -> (goto file) edit the file whose path name is under the cursor (or in the current selection)
+ - y<text-selector>P -> duplicate text when cursor is within (use 'a' version of selector to keep whitespace)
