@@ -116,6 +116,8 @@ tnoremap <C-Backspace> <Backspace>
 " PLUGINS
 "-----------------------------------
 
+let g:plug_window="botright 15new"
+
 call plug#begin(stdpath('data').'\plugged')
 Plug 'sheerun/vim-polyglot'
 Plug 'tomasiser/vim-code-dark'
@@ -126,6 +128,7 @@ Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'psliwka/vim-smoothie'
 Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " Colours
