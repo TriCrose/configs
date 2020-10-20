@@ -1,3 +1,4 @@
+" TODO: put git info in statusline
 " TODO: fix gitgutter preview colours
 " TODO: load most recent session on startup
 " TODO: command mode yank
