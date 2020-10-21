@@ -1,4 +1,4 @@
-" TODO: put git info in statusline
+" TODO: put git info (e.g. branch) in statusline
 " TODO: fix gitgutter preview colours
 " TODO: load most recent session on startup
 " TODO: command mode yank
@@ -25,6 +25,11 @@ set splitright splitbelow
 let g:neovide_cursor_trail_size=0.3
 let g:neovide_refresh_rate=60
 let g:neovide_transparency=0.95
+
+" System-specific (not source-controlled)
+if filereadable(stdpath('config') . '\system-specific.vim')
+    exec 'source ' . stdpath('config') . '\system-specific.vim'
+endif
 
 "-----------------------------------
 " GENERAL KEY MAPPINGS
@@ -130,6 +135,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'psliwka/vim-smoothie'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
 " Colours
