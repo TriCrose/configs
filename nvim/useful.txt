@@ -79,6 +79,10 @@ marks:
  - lowercase marks exist per file
  - uppercase marks are valid between files
 
+writing normal text:
+ - set linebreak -> only break lines on word boundaries
+ - set showbreak= -> clear showbreak parameter
+
 misc:
  - :so -> shorthand for :source
  - K -> search for a help page on the word under the cursor
