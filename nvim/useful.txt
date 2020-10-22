@@ -55,6 +55,8 @@ buffers:
 
 registers:
  - "x[d,c,y,p,etc.] -> interchange text with register x
+ - :let @a=@b -> copy contents of register b to register a
+ - :let @A=@b -> append the contents of register b to register a
  - 10 types of register
 
 current dir:
