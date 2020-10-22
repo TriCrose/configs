@@ -88,3 +88,7 @@ misc:
  - :set scrollbind -> bind scrolling across every window that has this set
  - gf -> (goto file) edit the file whose path name is under the cursor (or in the current selection)
  - y<text-selector>P -> duplicate text when cursor is within (use 'a' version of selector to keep whitespace)
+ - % -> if outside brackets: go to next end bracket on current line;
+        if inside brackets: go to previous start bracket;
+        if cursor on bracket: go to other bracket.
+        e.g. can use 'c%' instead of 'caB' when cursor in on bracket

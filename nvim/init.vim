@@ -1,3 +1,4 @@
+" TODO: set exclusion paths for grep and CtrlP
 " TODO: put git info (e.g. branch) in statusline
 " TODO: fix gitgutter preview colours
 " TODO: load most recent session on startup
@@ -20,6 +21,7 @@ set clipboard=unnamedplus
 set ignorecase smartcase
 set autoread
 set splitright splitbelow
+set title
 
 " Neovide GUI settings
 let g:neovide_cursor_trail_size=0.3
@@ -41,6 +43,9 @@ noremap <Space> :
 " Enter/Shift+Enter to search
 noremap <CR> /
 noremap <S-CR> ?
+
+" Alt+n to turn off search highlighting
+noremap <A-n> :noh<CR>
 
 " Alt+Enter to show git changes
 noremap <A-CR> :GitGutterFold<CR>
@@ -97,13 +102,13 @@ noremap <A-down> :res -7<CR>
 noremap <A-up> :res +7<CR>
 noremap <A-right> :vert res +7<CR>
 
-" Tab/Shift+Tab to move through buffers
-noremap <Tab> :bn<CR>
-noremap <S-Tab> :bp<CR>
+" Tab/Shift+Tab to move between tab pages
+noremap <Tab> :tabn<CR>
+noremap <S-Tab> :tabp<CR>
 
-" Ctrl+Tab/Ctrl+Shift+Tab to move through tab pages
-noremap <C-Tab> :tabn<CR>
-noremap <C-S-Tab> :tabp<CR>
+" Ctrl+Tab/Ctrl+Shift+Tab to move tab pages right/left
+noremap <C-Tab> :tabmove +<CR>
+noremap <C-S-Tab> :tabmove -<CR>
 
 "-----------------------------------
 " KEY MAPPINGS FOR TERMINALS
@@ -134,8 +139,6 @@ Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'psliwka/vim-smoothie'
 Plug 'kien/ctrlp.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
 " Colours
