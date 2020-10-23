@@ -1,4 +1,4 @@
-" TODO: set exclusion paths for grep and CtrlP
+" TODO: set exclusion paths for grep
 " TODO: put git info (e.g. branch) in statusline
 " TODO: fix gitgutter preview colours
 " TODO: load most recent session on startup
@@ -22,6 +22,8 @@ set ignorecase smartcase
 set autoread
 set splitright splitbelow
 set title
+
+set wildignore=*\node_modules\*,*\__pycache__\*,*\.virtualenv*,*\.git\*,*\.svn\*,*\.hg\*,*\.CVS\*,*\.DS_Store\*
 
 " Neovide GUI settings
 let g:neovide_cursor_trail_size=0.3
@@ -188,9 +190,6 @@ let g:NERDTreeMapPreviewVSplit='gv'
 let g:NERDTreeMapOpenSplit='s'
 let g:NERDTreeMapPreviewSplit='gs'
 let g:NERDTreeMapCustomOpen=''
-
-" Save session on exit
-let g:startify_session_persistence = 1
 
 " Closest lightline colour scheme to codedark
 let g:lightline = {'colorscheme': 'seoul256'}
