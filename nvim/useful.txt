@@ -98,3 +98,4 @@ misc:
         if inside brackets: go to previous start bracket;
         if cursor on bracket: go to other bracket.
         e.g. can use 'c%' instead of 'caB' when cursor in on bracket
+ - [<number>][i,a,I,A] -> insert text multiple times (repeat text)

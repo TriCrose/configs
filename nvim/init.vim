@@ -40,12 +40,14 @@ endif
 " Space to enter command mode
 noremap <Space> :
 
-" Enter/Shift+Enter to search
-noremap <CR> /
-noremap <S-CR> ?
 
-" Alt+n to turn off search highlighting
-noremap <A-n> :noh<CR>
+" Enter/Shift+Enter to start a new line
+noremap <CR> o
+noremap <S-CR> O
+
+" o/O to search
+noremap o /
+noremap O ?
 
 " Alt+Enter to show git changes
 noremap <A-CR> :GitGutterFold<CR>
@@ -55,6 +57,9 @@ noremap <C-s> :NERDTreeToggleVCS<CR>
 
 " <Leader>+p to update plugins
 noremap <Leader>p :source $MYVIMRC<CR>:PlugClean<CR>:PlugInstall<CR>
+
+" <Leader>+n to clear search highlighting
+noremap <Leader>n :noh<CR>
 
 " Ctrl+Space/Ctrl+Shift+Space for insert-mode autocomplete
 inoremap <C-Space> <C-n>
@@ -113,6 +118,12 @@ noremap <C-S-Tab> :tabmove -<CR>
 "-----------------------------------
 " KEY MAPPINGS FOR TERMINALS
 "-----------------------------------
+
+" <Leader>+j to open a split and enter a terminal
+noremap <Leader>j :new<CR>:te<CR>a
+
+" <Leader>+l to open a vsplit and enter a terminal
+noremap <Leader>l :vert new<CR>:te<CR>a
 
 " Escape to exit terminal mode
 tnoremap <Esc> <C-\><C-n>
