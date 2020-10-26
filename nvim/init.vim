@@ -1,4 +1,7 @@
-" TODO: status line (include current working dir (local one)
+" TODO: status line:
+"       - current local working directory
+"       - put parent directory in file name
+"       - git branch information
 " TODO: set exclusion paths for grep
 " TODO: put git info (e.g. branch) in statusline
 " TODO: fix gitgutter preview colours
@@ -48,14 +51,14 @@ noremap <Space> :
 noremap <CR> /
 noremap <S-CR> ?
 
-" Alt+Enter to show git changes
-noremap <A-CR> :GitGutterFold<CR>gg
-
 " Ctrl+S to toggle file browser
 noremap <C-s> :NERDTreeToggleVCS<CR>
 
 " <Leader>+p to update plugins
-noremap <Leader>p :source $MYVIMRC<CR>:PlugClean<CR>:PlugInstall<CR>
+noremap <Leader>p :source $MYVIMRC<CR>:PlugInstall<CR>:PlugUpdate<CR>
+
+" Alt+Enter to show git changes
+noremap <A-CR> :GitGutterFold<CR>gg
 
 " <Leader>+n to clear search highlighting
 noremap <Leader>n :noh<CR>
@@ -86,15 +89,9 @@ endfunction
 " KEY MAPPINGS FOR WINDOWS/BUFFERS
 "-----------------------------------
 
-" Ctrl+[h,j,k,l] (or arrows) to move between windows
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-noremap <C-left> <C-w>h
-noremap <C-down> <C-w>j
-noremap <C-up> <C-w>k
-noremap <C-right> <C-w>l
+" Tab to move through windows/go to window number
+noremap <Tab> <C-w>w
+noremap <S-Tab> <C-w>W
 
 " Alt+[h,j,k,l] (or arrows) to resize windows
 noremap <A-h> :vert res -7<CR>
@@ -106,16 +103,16 @@ noremap <A-down> :res -7<CR>
 noremap <A-up> :res +7<CR>
 noremap <A-right> :vert res +7<CR>
 
-" Tab to switch to the alterate buffer
-noremap <Tab> :b#<CR>
+" Ctrl+a to switch to the alternate buffer
+noremap <C-a> <C-^>
 
 " Ctrl+Tab/Ctrl+Shift+Tab to move between tab pages
 noremap <C-Tab> :tabn<CR>
 noremap <C-S-Tab> :tabp<CR>
 
-" Ctrl+(PgUp/PgDn) to move tab pages right/left
-noremap <C-PageDown> :tabm+<CR>
-noremap <C-PageUp> :tabm-<CR>
+" Ctrl+Shift+(PgUp/PgDn) to move tab pages right/left
+noremap <C-S-PageDown> :tabm+<CR>
+noremap <C-S-PageUp> :tabm-<CR>
 
 "-----------------------------------
 " KEY MAPPINGS FOR TERMINALS
@@ -124,6 +121,8 @@ noremap <C-PageUp> :tabm-<CR>
 " Split terminal horizontally or vertically
 noremap <Leader>j :new<CR>:te<CR>
 noremap <Leader>l :vne<CR>:te<CR>
+noremap <Leader>J :bo new<CR>:te<CR>
+noremap <Leader>L :bo vne<CR>:te<CR>
 
 " Ctrl+V to paste
 tnoremap <C-v> <C-\><C-n>pa
@@ -153,6 +152,7 @@ Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'psliwka/vim-smoothie'
 Plug 'kien/ctrlp.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " Colours
