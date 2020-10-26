@@ -1,3 +1,4 @@
+" TODO: status line (include current working dir (local one)
 " TODO: set exclusion paths for grep
 " TODO: put git info (e.g. branch) in statusline
 " TODO: fix gitgutter preview colours
@@ -23,6 +24,7 @@ set autoread
 set splitright splitbelow
 set title
 
+" Exclusion paths for searching etc.
 set wildignore=*\node_modules\*,*\__pycache__\*,*\.virtualenv*,*\.git\*,*\.svn\*,*\.hg\*,*\.CVS\*,*\.DS_Store\*
 
 " Neovide GUI settings
@@ -42,17 +44,12 @@ endif
 " Space to enter command mode
 noremap <Space> :
 
-
-" Enter/Shift+Enter to start a new line
-noremap <CR> o
-noremap <S-CR> O
-
-" o/O to search
-noremap o /
-noremap O ?
+" Enter/Shift+Enter to search
+noremap <CR> /
+noremap <S-CR> ?
 
 " Alt+Enter to show git changes
-noremap <A-CR> :GitGutterFold<CR>
+noremap <A-CR> :GitGutterFold<CR>gg
 
 " Ctrl+S to toggle file browser
 noremap <C-s> :NERDTreeToggleVCS<CR>
@@ -109,23 +106,27 @@ noremap <A-down> :res -7<CR>
 noremap <A-up> :res +7<CR>
 noremap <A-right> :vert res +7<CR>
 
-" Tab/Shift+Tab to move between tab pages
-noremap <Tab> :tabn<CR>
-noremap <S-Tab> :tabp<CR>
+" Tab to switch to the alterate buffer
+noremap <Tab> :b#<CR>
 
-" Ctrl+Tab/Ctrl+Shift+Tab to move tab pages right/left
-noremap <C-Tab> :tabmove +<CR>
-noremap <C-S-Tab> :tabmove -<CR>
+" Ctrl+Tab/Ctrl+Shift+Tab to move between tab pages
+noremap <C-Tab> :tabn<CR>
+noremap <C-S-Tab> :tabp<CR>
+
+" Ctrl+(PgUp/PgDn) to move tab pages right/left
+noremap <C-PageDown> :tabm+<CR>
+noremap <C-PageUp> :tabm-<CR>
 
 "-----------------------------------
 " KEY MAPPINGS FOR TERMINALS
 "-----------------------------------
 
-" <Leader>+j to open a split and enter a terminal
-noremap <Leader>j :new<CR>:te<CR>a
+" Split terminal horizontally or vertically
+noremap <Leader>j :new<CR>:te<CR>
+noremap <Leader>l :vne<CR>:te<CR>
 
-" <Leader>+l to open a vsplit and enter a terminal
-noremap <Leader>l :vert new<CR>:te<CR>a
+" Ctrl+V to paste
+tnoremap <C-v> <C-\><C-n>pa
 
 " Escape to exit terminal mode
 tnoremap <Esc> <C-\><C-n>
