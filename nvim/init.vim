@@ -17,6 +17,7 @@ set breakindent showbreak=>>
 set guifont=Fira\ Code\ Retina:h12
 set updatetime=100
 set mouse=a
+set noswapfile
 set relativenumber
 set signcolumn=no
 set autoindent tabstop=4 shiftwidth=4 expandtab
@@ -63,10 +64,6 @@ noremap <A-CR> :GitGutterFold<CR>gg
 " <Leader>+n to clear search highlighting
 noremap <Leader>n :noh<CR>
 
-" Ctrl+Space/Ctrl+Shift+Space for insert-mode autocomplete
-inoremap <C-Space> <C-n>
-inoremap <C-S-Space> <C-p>
-
 " Ctrl+V to paste from clipboard (insert/command mode)
 inoremap <C-v> <C-r>+
 cnoremap <C-v> <C-r>+
@@ -84,6 +81,17 @@ function! ToggleFullscreen()
         :let g:neovide_fullscreen=v:true
     endif
 endfunction
+
+"-----------------------------------
+" KEY MAPPINGS FOR AUTOCOMPLETION
+"-----------------------------------
+
+" Ctrl+space to refresh CoC autocompletion
+inoremap <silent><expr> <C-Space> coc#refresh()
+
+" Tab/Shift+Tab to navigate autocomplete menu if it's visible
+inoremap <silent><expr> <Tab> pumvisible() ? "<C-n>" : "<Tab>"
+inoremap <silent><expr> <S-Tab> pumvisible() ? "<C-p>" : "<S-Tab>"
 
 "-----------------------------------
 " KEY MAPPINGS FOR WINDOWS/BUFFERS
