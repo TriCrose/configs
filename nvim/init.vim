@@ -56,7 +56,7 @@ noremap <S-CR> ?
 noremap <C-s> :NERDTreeToggleVCS<CR>
 
 " <Leader>+p to update plugins
-noremap <Leader>p :source $MYVIMRC<CR>:PlugInstall<CR>:PlugUpdate<CR>
+noremap <Leader>p :so $MYVIMRC<CR>:PlugUpdate<CR>:CocUpdate<CR>
 
 " Alt+Enter to show git changes
 noremap <A-CR> :GitGutterFold<CR>gg

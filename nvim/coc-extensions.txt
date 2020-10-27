@@ -1,5 +1,5 @@
-coc-vimlsp
-coc-python
-coc-json
-coc-tsserver
-coc-clangd
+JS/TS:  coc-tsserver coc-eslint
+JSON:   coc-json
+C/C++:  coc-clangd
+Python: coc-python
+Vim:    coc-vimlsp
