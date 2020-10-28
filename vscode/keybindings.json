@@ -10,14 +10,8 @@
     // Editor management
     {"key": "ctrl+shift+pagedown", "command": "workbench.action.moveEditorRightInGroup"},
     {"key": "ctrl+shift+pageup", "command": "workbench.action.moveEditorLeftInGroup"},
-    {"key": "ctrl+oem_5", "command": "workbench.action.splitEditorRight" },
-    {"key": "ctrl+shift+oem_5", "command": "workbench.action.splitEditorDown" },
-
-    // Editor group navigation
-    {"key": "alt+up", "command": "workbench.action.focusAboveGroup"},
-    {"key": "alt+down", "command": "workbench.action.focusBelowGroup"},
-    {"key": "alt+left", "command": "workbench.action.focusLeftGroup"},
-    {"key": "alt+right", "command": "workbench.action.focusRightGroup"},
+    {"key": "ctrl+\\", "command": "workbench.action.splitEditorRight" },
+    {"key": "ctrl+shift+\\", "command": "workbench.action.splitEditorDown" },
 
     // Editor group management
     {"key": "ctrl+alt+s", "command": "workbench.action.editorLayoutSingle"},
