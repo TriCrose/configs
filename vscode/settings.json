@@ -30,7 +30,7 @@
 
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "breadcrumbs.enabled": false,
+    "breadcrumbs.enabled": true,
 
     "powershell.integratedConsole.showOnStartup": false,
 }

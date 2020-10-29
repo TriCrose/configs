@@ -21,8 +21,8 @@
     {"key": "ctrl+alt+shift+up", "command": "workbench.action.moveActiveEditorGroupUp"},
 
     // Line manipulation
-    {"key": "ctrl+enter", "when": "textInputFocus && !editorReadonly", "command": "editor.action.joinLines"},
-    {"key": "shift+backspace", "when": "textInputFocus && !editorReadonly", "command": "editor.action.deleteLines"},
+    {"key": "ctrl+e", "when": "textInputFocus && !editorReadonly", "command": "editor.action.joinLines"},
+    {"key": "ctrl+shift+backspace", "when": "textInputFocus && !editorReadonly", "command": "editor.action.deleteLines"},
     {"key": "ctrl+shift+up", "when": "editorTextFocus && !editorReadonly", "command": "editor.action.moveLinesUpAction"},
     {"key": "ctrl+shift+down", "when": "editorTextFocus && !editorReadonly", "command": "editor.action.moveLinesDownAction"},
 
