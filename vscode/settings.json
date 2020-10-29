@@ -10,6 +10,7 @@
     "editor.fontLigatures": true,
     "editor.cursorBlinking": "phase",
     "editor.renderLineHighlight": "all",
+    "editor.smoothScrolling": true,
 
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.iconTheme": "vs-nomo-dark",
