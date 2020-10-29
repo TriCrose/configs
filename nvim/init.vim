@@ -2,6 +2,8 @@
 "       - current local working directory
 "       - put parent directory in file name
 "       - git branch information
+" TODO: install Ag and Rg
+" TODO: get fzf preview working
 " TODO: set exclusion paths for grep
 " TODO: put git info (e.g. branch) in statusline
 " TODO: fix gitgutter preview colours
@@ -56,7 +58,7 @@ noremap <S-CR> ?
 noremap <C-s> :NERDTreeToggleVCS<CR>
 
 " <Leader>+p to update plugins
-noremap <Leader>p :so $MYVIMRC<CR>:PlugUpdate<CR>:CocUpdate<CR>
+noremap <Leader>p :so $MYVIMRC<CR>:PlugInstall<CR>:PlugUpdate<CR>:CocUpdate<CR>
 
 " Alt+Enter to show git changes
 noremap <A-CR> :GitGutterFold<CR>gg
@@ -122,21 +124,21 @@ noremap <C-S-Tab> :tabp<CR>
 noremap <C-S-PageDown> :tabm+<CR>
 noremap <C-S-PageUp> :tabm-<CR>
 
+" Split buffer horizontally or vertically
+noremap <Leader>j :sp<CR>
+noremap <Leader>l :vs<CR>
+noremap <Leader>J :bo sp<CR>
+noremap <Leader>L :bo vs<CR>
+
 "-----------------------------------
 " KEY MAPPINGS FOR TERMINALS
 "-----------------------------------
 
-" Split terminal horizontally or vertically
-noremap <Leader>j :new<CR>:te<CR>
-noremap <Leader>l :vne<CR>:te<CR>
-noremap <Leader>J :bo new<CR>:te<CR>
-noremap <Leader>L :bo vne<CR>:te<CR>
-
 " Ctrl+V to paste
 tnoremap <C-v> <C-\><C-n>pa
 
-" Escape to exit terminal mode
-tnoremap <Esc> <C-\><C-n>
+" Escape to exit terminal mode (exception for fzf)
+tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
 
 " Ctrl+u to clear the line
 tnoremap <C-u> <Esc>
@@ -159,8 +161,9 @@ Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'psliwka/vim-smoothie'
-Plug 'kien/ctrlp.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " Colours
@@ -181,19 +184,7 @@ highlight GitGutterChangeLineNr guifg=#5fa1d8
 highlight GitGutterChangeDeleteLineNr guifg=#c083ba
 highlight GitGutterDeleteLineNr guifg=#ea8080
 
-let g:ctrlp_map = '<C-Space>'
-let g:ctrlp_cmd = 'CtrlPCurWD'
-let g:ctrlp_by_filename = 1
-let g:ctrlp_match_window = 'min:15,max:15'
-let g:ctrlp_prompt_mappings = {
-    \ 'OpenMulti()': ['<CR>', '<C-CR>'],
-    \ 'AcceptSelection("e")': ['<C-o>', '<2-LeftMouse>'],
-    \ 'AcceptSelection("h")': ['<C-s>'],
-    \ 'AcceptSelection("v")': ['<c-v>', '<RightMouse>'],
-    \ 'PrtDeleteWord()': ['<C-Backspace>'],
-\}
-
-" NERDTree keybinds that are consistent with CtrlP
+" More intuitive NERDTree keybinds
 let g:NERDTreeMapOpenVSplit='v'
 let g:NERDTreeMapPreviewVSplit='gv'
 let g:NERDTreeMapOpenSplit='s'
@@ -202,3 +193,11 @@ let g:NERDTreeMapCustomOpen=''
 
 " Closest lightline colour scheme to codedark
 let g:lightline = {'colorscheme': 'seoul256'}
+
+" FZF
+noremap <C-Space> :Files<CR>
+noremap <C-S-Space> :Buffers<CR>
+noremap <C-p> :Lines<CR>
+
+let g:fzf_layout = {'window': {'width': 0.5, 'height': 0.5, 'yoffset': 0 }}
+let $FZF_DEFAULT_OPTS = '--layout=reverse'
