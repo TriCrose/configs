@@ -1,12 +1,12 @@
+" TODO: get fzf preview working
 " TODO: status line:
 "       - current local working directory
 "       - put parent directory in file name
 "       - git branch information
-" TODO: install Ag and Rg
-" TODO: get fzf preview working
 " TODO: set exclusion paths for grep
 " TODO: put git info (e.g. branch) in statusline
 " TODO: fix gitgutter preview colours
+" TODO: fix FZF colors
 " TODO: load most recent session on startup
 " TODO: command mode yank
 
@@ -84,6 +84,19 @@ function! ToggleFullscreen()
     endif
 endfunction
 
+" <Leader>+c to set the working directory to that of the current file
+noremap <Leader>c :cd %:p:h<CR>:pwd<CR>
+
+" Fuzzy finding (powered by FZF)
+noremap <C-Space> :Buffers<CR>
+noremap <C-S-Space> :Lines<CR>
+noremap <C-p> :Files<CR>
+
+" GitGutter
+map ghp <Plug>(GitGutterPreviewHunk)
+map ghs <Plug>(GitGutterStageHunk)
+map ghu <Plug>(GitGutterUndoHunk)
+
 "-----------------------------------
 " KEY MAPPINGS FOR AUTOCOMPLETION
 "-----------------------------------
@@ -127,8 +140,8 @@ noremap <C-S-PageUp> :tabm-<CR>
 " Split buffer horizontally or vertically
 noremap <Leader>j :sp<CR>
 noremap <Leader>l :vs<CR>
-noremap <Leader>J :bo sp<CR>
-noremap <Leader>L :bo vs<CR>
+noremap <Leader>k :abo sp<CR>
+noremap <Leader>h :abo vs<CR>
 
 "-----------------------------------
 " KEY MAPPINGS FOR TERMINALS
@@ -195,9 +208,5 @@ let g:NERDTreeMapCustomOpen=''
 let g:lightline = {'colorscheme': 'seoul256'}
 
 " FZF
-noremap <C-Space> :Files<CR>
-noremap <C-S-Space> :Buffers<CR>
-noremap <C-p> :Lines<CR>
-
 let g:fzf_layout = {'window': {'width': 0.5, 'height': 0.5, 'yoffset': 0 }}
 let $FZF_DEFAULT_OPTS = '--layout=reverse'
