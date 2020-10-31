@@ -1,4 +1,8 @@
 " TODO: get fzf preview working
+" TODO: fix ctrl+i moving through windows for some reason
+" TODO: Rg:
+"       - Don't search filenames, just contents
+"       - Don't fuzzy search
 " TODO: status line:
 "       - current local working directory
 "       - put parent directory in file name
@@ -81,13 +85,10 @@ function! ToggleFullscreen()
     endif
 endfunction
 
-" <Leader>+c to set the working directory to that of the current file
-noremap <Leader>c :cd %:p:h<CR>:pwd<CR>
-
 " Fuzzy finding (powered by FZF)
-noremap <C-Space> :Buffers<CR>
-noremap <C-S-Space> :Lines<CR>
-noremap <C-p> :Files<CR>
+noremap <C-Space> :Files<CR>
+noremap <C-S-Space> :Rg<CR>
+noremap <C-p> :Buffers<CR>
 
 " GitGutter
 map ghp <Plug>(GitGutterPreviewHunk)
@@ -95,15 +96,23 @@ map ghs <Plug>(GitGutterStageHunk)
 map ghu <Plug>(GitGutterUndoHunk)
 
 "-----------------------------------
-" KEY MAPPINGS FOR AUTOCOMPLETION
+" KEY MAPPINGS FOR INTELLISENSE
 "-----------------------------------
 
-" Ctrl+space to refresh CoC autocompletion
+" Ctrl+Space to refresh CoC autocompletion
 inoremap <silent><expr> <C-Space> coc#refresh()
 
 " Tab/Shift+Tab to navigate autocomplete menu if it's visible
 inoremap <silent><expr> <Tab> pumvisible() ? "<C-n>" : "<Tab>"
 inoremap <silent><expr> <S-Tab> pumvisible() ? "<C-p>" : "<S-Tab>"
+
+" <Leader>+z/x to go to declaration/definition
+map <Leader>z <Plug>(coc-declaration)
+map <Leader>x <Plug>(coc-definition)
+
+" <Leader>+s/d to show documentation/parameter hints
+noremap <Leader>s :call CocAction("doHover")<CR>
+noremap <Leader>d :call CocAction("showSignatureHelp")<CR>
 
 "-----------------------------------
 " KEY MAPPINGS FOR WINDOWS/BUFFERS
@@ -167,7 +176,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tomasiser/vim-code-dark'
 Plug 'mhinz/vim-startify'
 Plug 'itchyny/lightline.vim'
-Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'psliwka/vim-smoothie'
@@ -194,17 +202,10 @@ highlight GitGutterChangeLineNr guifg=#5fa1d8
 highlight GitGutterChangeDeleteLineNr guifg=#c083ba
 highlight GitGutterDeleteLineNr guifg=#ea8080
 
-" More intuitive NERDTree keybinds
-let g:NERDTreeMapOpenVSplit='v'
-let g:NERDTreeMapPreviewVSplit='gv'
-let g:NERDTreeMapOpenSplit='s'
-let g:NERDTreeMapPreviewSplit='gs'
-let g:NERDTreeMapCustomOpen=''
-
-" Closest lightline colour scheme to codedark
+" Lightline config
 let g:lightline = {'colorscheme': 'seoul256',
                 \  'component':   {'filename': '%f'}}
 
 " FZF
-let g:fzf_layout = {'window': {'width': 0.5, 'height': 0.5, 'yoffset': 0 }}
+let g:fzf_layout = {'window': {'width': 0.7, 'height': 0.7, 'yoffset': 0 }}
 let $FZF_DEFAULT_OPTS = '--layout=reverse'
