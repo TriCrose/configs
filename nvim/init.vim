@@ -1,17 +1,11 @@
-" TODO: get fzf preview working
-" TODO: fix ctrl+i moving through windows for some reason
-" TODO: Rg:
-"       - Don't search filenames, just contents
-"       - Don't fuzzy search
 " TODO: status line:
-"       - current local working directory
-"       - put parent directory in file name
 "       - git branch information
-" TODO: set exclusion paths for grep
-" TODO: put git info (e.g. branch) in statusline
+"       - fix lightline not knowing when a path is relative
+"       - lcd
+"       - move line no. and % next to the filename
+" TODO: coc:
+"       - don't change line number colour, just use red/orange underline
 " TODO: fix gitgutter preview colours
-" TODO: fix FZF colors
-" TODO: load most recent session on startup
 " TODO: command mode yank
 
 "-----------------------------------
@@ -85,11 +79,6 @@ function! ToggleFullscreen()
     endif
 endfunction
 
-" Fuzzy finding (powered by FZF)
-noremap <C-Space> :Files<CR>
-noremap <C-S-Space> :Rg<CR>
-noremap <C-p> :Buffers<CR>
-
 " GitGutter
 map ghp <Plug>(GitGutterPreviewHunk)
 map ghs <Plug>(GitGutterStageHunk)
@@ -111,16 +100,16 @@ map <Leader>z <Plug>(coc-declaration)
 map <Leader>x <Plug>(coc-definition)
 
 " <Leader>+s/d to show documentation/parameter hints
-noremap <Leader>s :call CocAction("doHover")<CR>
-noremap <Leader>d :call CocAction("showSignatureHelp")<CR>
+noremap <silent> <Leader>s :call CocAction("doHover")<CR>
+noremap <silent> <Leader>d :call CocAction("showSignatureHelp")<CR>
 
 "-----------------------------------
 " KEY MAPPINGS FOR WINDOWS/BUFFERS
 "-----------------------------------
 
-" Tab to move through windows/go to window number
-noremap <Tab> <C-w>w
-noremap <S-Tab> <C-w>W
+" Ctrl+Space/Ctrl+Shift+Space to move through windows/go to window number
+noremap <C-Space> <C-w>w
+noremap <C-S-Space> <C-w>W
 
 " Alt+[h,j,k,l] (or arrows) to resize windows
 noremap <A-h> :vert res -7<CR>
@@ -143,7 +132,7 @@ noremap <C-S-Tab> :tabp<CR>
 noremap <C-S-PageDown> :tabm+<CR>
 noremap <C-S-PageUp> :tabm-<CR>
 
-" Split buffer horizontally or vertically
+" Split buffer in any direction
 noremap <Leader>j :sp<CR>
 noremap <Leader>l :vs<CR>
 noremap <Leader>k :abo sp<CR>
@@ -156,8 +145,8 @@ noremap <Leader>h :abo vs<CR>
 " Ctrl+V to paste
 tnoremap <C-v> <C-\><C-n>pa
 
-" Escape to exit terminal mode (exception for fzf)
-tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
+" Escape to exit terminal mode
+tnoremap <Esc> <C-\><C-n>
 
 " Ctrl+u to clear the line
 tnoremap <C-u> <Esc>
@@ -180,8 +169,6 @@ Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'psliwka/vim-smoothie'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " Colours
@@ -202,10 +189,6 @@ highlight GitGutterChangeLineNr guifg=#5fa1d8
 highlight GitGutterChangeDeleteLineNr guifg=#c083ba
 highlight GitGutterDeleteLineNr guifg=#ea8080
 
-" Lightline config
+" Lightline
 let g:lightline = {'colorscheme': 'seoul256',
                 \  'component':   {'filename': '%f'}}
-
-" FZF
-let g:fzf_layout = {'window': {'width': 0.7, 'height': 0.7, 'yoffset': 0 }}
-let $FZF_DEFAULT_OPTS = '--layout=reverse'

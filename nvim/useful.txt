@@ -101,6 +101,7 @@ misc:
  - [<number>][i,a,I,A] -> insert text multiple times (repeat text)
  - look for unique symbols to jump to: searching is good because it adds the location to the jump list
  - ar[gs] {arglist} -> define {arglist} as the new argument list (loads all arguments into buffers) and edit the first one
+ - :browse {command} -> open a file select dialog for arguments to {command} (e.g. ol[dfiles] for MRU)
 
 vim trainer:
  - trains lookahead by giving you new instructions as you complete the current ones
