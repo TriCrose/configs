@@ -54,9 +54,6 @@ noremap <Space> :
 noremap <CR> /
 noremap <S-CR> ?
 
-" Ctrl+S to toggle file browser
-noremap <C-s> :NERDTreeToggleVCS<CR>
-
 " <Leader>+p to update plugins
 noremap <Leader>p :so $MYVIMRC<CR>:PlugInstall<CR>:PlugUpdate<CR>:CocUpdate<CR>
 
@@ -205,7 +202,8 @@ let g:NERDTreeMapPreviewSplit='gs'
 let g:NERDTreeMapCustomOpen=''
 
 " Closest lightline colour scheme to codedark
-let g:lightline = {'colorscheme': 'seoul256'}
+let g:lightline = {'colorscheme': 'seoul256',
+                \  'component':   {'filename': '%f'}}
 
 " FZF
 let g:fzf_layout = {'window': {'width': 0.5, 'height': 0.5, 'yoffset': 0 }}
