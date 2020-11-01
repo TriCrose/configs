@@ -52,6 +52,9 @@ noremap <Space> :
 noremap <CR> /
 noremap <S-CR> ?
 
+" Shift+k to yank
+noremap K y
+
 " <Leader>+p to update plugins
 noremap <Leader>p :so $MYVIMRC<CR>:PlugInstall<CR>:PlugUpdate<CR>:CocUpdate<CR>
 
@@ -107,9 +110,13 @@ noremap <silent> <Leader>d :call CocAction("showSignatureHelp")<CR>
 " KEY MAPPINGS FOR WINDOWS/BUFFERS
 "-----------------------------------
 
-" Ctrl+a/s to move through windows or go to window number
-noremap <C-s> <C-w>w
-noremap <C-a> <C-w>W
+" Ctrl+j/k to cycle through windows
+noremap <C-k> <C-w>W
+noremap <C-j> <C-w>w
+
+" Ctrl+h/l to go to first/last window
+noremap <C-h> <C-w>t
+noremap <C-l> <C-w>b
 
 " Alt+[h,j,k,l] (or arrows) to resize windows
 noremap <A-h> :vert res -7<CR>
@@ -166,6 +173,7 @@ Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'psliwka/vim-smoothie'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jremmen/vim-ripgrep'  " Requires rg in path
 call plug#end()
 
 " Colours
