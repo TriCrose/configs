@@ -107,9 +107,9 @@ noremap <silent> <Leader>d :call CocAction("showSignatureHelp")<CR>
 " KEY MAPPINGS FOR WINDOWS/BUFFERS
 "-----------------------------------
 
-" Ctrl+Space/Ctrl+Shift+Space to move through windows/go to window number
-noremap <C-Space> <C-w>w
-noremap <C-S-Space> <C-w>W
+" Ctrl+a/s to move through windows or go to window number
+noremap <C-s> <C-w>w
+noremap <C-a> <C-w>W
 
 " Alt+[h,j,k,l] (or arrows) to resize windows
 noremap <A-h> :vert res -7<CR>
@@ -120,9 +120,6 @@ noremap <A-left> :vert res -7<CR>
 noremap <A-down> :res -7<CR>
 noremap <A-up> :res +7<CR>
 noremap <A-right> :vert res +7<CR>
-
-" Ctrl+a to switch to the alternate buffer
-noremap <C-a> <C-^>
 
 " Ctrl+Tab/Ctrl+Shift+Tab to move between tab pages
 noremap <C-Tab> :tabn<CR>
