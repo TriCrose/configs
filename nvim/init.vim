@@ -1,3 +1,5 @@
+" TODO: lightline: put modified flag in inactive windows
+" TODO: use drop for coc instea of edit
 " TODO: fade inactive windows so the active one is clearly visible
 " TODO: status line:
 "       - git branch information
@@ -23,6 +25,7 @@ set ignorecase smartcase
 set autoread
 set splitright splitbelow
 set title
+set cursorline
 
 " Exclusion paths for searching etc.
 set wildignore=*\node_modules\*,*\__pycache__\*,*\.virtualenv*,*\.git\*,*\.svn\*,*\.hg\*,*\.CVS\*,*\.DS_Store\*
@@ -192,26 +195,26 @@ highlight GitGutterDeleteLineNr guifg=#ea8080
 
 " Status bar config
 let g:lightline = {
-                \   'colorscheme':  'seoul256',
-                \   'component':    {'filename': '%f',
-                \                    'lineinfo': '%{line(".") . "/" . line("$")}',
-                \                    'column': 'col %c'},
-                \   'active':       {'left': [
-                \                       ['mode', 'paste'],
-                \                       ['filename', 'modified'],
-                \                       ['lineinfo'],
-                \                       ['column']
-                \                   ],
-                \                    'right': [
-                \                       ['winnr'],
-                \                       ['fileformat', 'fileencoding', 'filetype']
-                \                   ]},
-                \   'inactive':     {'left': [
-                \                       ['filename'],
-                \                       ['lineinfo'],
-                \                       ['column']
-                \                   ],
-                \                    'right': [
-                \                       ['winnr']
-                \                   ]}
-                \ }
+\   'colorscheme':  'seoul256',
+\   'component':    {'filename': '%f',
+\                    'lineinfo': 'line %l/%{line("$")}',
+\                    'colinfo': 'col %c/%{col("$")-1}'},
+\   'active':       {'left': [
+\                       ['mode', 'paste'],
+\                       ['filename', 'modified'],
+\                       ['lineinfo'],
+\                       ['colinfo']
+\                   ],
+\                    'right': [
+\                       ['winnr'],
+\                       ['fileformat', 'fileencoding', 'filetype']
+\                   ]},
+\   'inactive':     {'left': [
+\                       ['filename', 'modified'],
+\                       ['lineinfo'],
+\                       ['colinfo']
+\                   ],
+\                    'right': [
+\                       ['winnr']
+\                   ]}
+\ }
