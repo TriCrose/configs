@@ -194,6 +194,28 @@ highlight GitGutterChangeLineNr guifg=#5fa1d8
 highlight GitGutterChangeDeleteLineNr guifg=#c083ba
 highlight GitGutterDeleteLineNr guifg=#ea8080
 
-" Lightline
-let g:lightline = {'colorscheme': 'seoul256',
-                \  'component':   {'filename': '%f'}}
+" Status bar config
+let g:lightline = {
+                \   'colorscheme':  'seoul256',
+                \   'component':    {'filename': '%f',
+                \                    'lineinfo': '%{line(".") . "/" . line("$")}',
+                \                    'column': 'col %c'},
+                \   'active':       {'left': [
+                \                       ['mode', 'paste'],
+                \                       ['filename', 'modified'],
+                \                       ['lineinfo'],
+                \                       ['column']
+                \                   ],
+                \                    'right': [
+                \                       ['winnr'],
+                \                       ['fileformat', 'fileencoding', 'filetype']
+                \                   ]},
+                \   'inactive':     {'left': [
+                \                       ['filename'],
+                \                       ['lineinfo'],
+                \                       ['column']
+                \                   ],
+                \                    'right': [
+                \                       ['winnr']
+                \                   ]}
+                \ }
