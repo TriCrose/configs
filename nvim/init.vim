@@ -1,10 +1,6 @@
+" TODO: fade inactive windows so the active one is clearly visible
 " TODO: status line:
 "       - git branch information
-"       - fix lightline not knowing when a path is relative
-"       - lcd
-"       - move line no. and % next to the filename
-" TODO: coc:
-"       - don't change line number colour, just use red/orange underline
 " TODO: fix gitgutter preview colours
 " TODO: command mode yank
 
