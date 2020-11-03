@@ -1,5 +1,4 @@
-" TODO: lightline: put modified flag in inactive windows
-" TODO: use drop for coc instea of edit
+" TODO: use drop for coc instead of edit
 " TODO: fade inactive windows so the active one is clearly visible
 " TODO: status line:
 "       - git branch information
@@ -39,6 +38,84 @@ let g:neovide_transparency=0.95
 if filereadable(stdpath('config') . '\system-specific.vim')
     exec 'source ' . stdpath('config') . '\system-specific.vim'
 endif
+
+"-----------------------------------
+" PLUGINS
+"-----------------------------------
+
+let g:plug_window="botright 15new"
+
+call plug#begin(stdpath('data').'\plugged')
+Plug 'sheerun/vim-polyglot'
+Plug 'tomasiser/vim-code-dark'
+Plug 'mhinz/vim-startify'
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-surround'
+Plug 'airblade/vim-gitgutter'
+Plug 'psliwka/vim-smoothie'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jremmen/vim-ripgrep'  " Requires rg in path
+call plug#end()
+
+" Colour the line numbers based on the git diff
+let g:gitgutter_signs = 0
+let g:gitgutter_highlight_lines = 0
+let g:gitgutter_highlight_linenrs = 1
+
+" Status bar config
+let g:lightline = {
+\   'colorscheme':  'seoul256',
+\   'component':    {'filename': '%f',
+\                    'lineinfo': 'line %l/%{line("$")}',
+\                    'colinfo': 'col %c/%{col("$")-1}'},
+\   'active':       {'left': [
+\                       ['mode', 'paste'],
+\                       ['filename', 'modified'],
+\                       ['lineinfo'],
+\                       ['colinfo']
+\                   ],
+\                    'right': [
+\                       ['winnr'],
+\                       ['fileformat', 'fileencoding', 'filetype']
+\                   ]},
+\   'inactive':     {'left': [
+\                       ['filename', 'modified'],
+\                       ['lineinfo'],
+\                       ['colinfo']
+\                   ],
+\                    'right': [
+\                       ['winnr']
+\                   ]}
+\ }
+
+"-----------------------------------
+" COLOURS
+"-----------------------------------
+
+colorscheme codedark
+
+" Slightly darker background
+highlight Normal guibg=#181818
+highlight LineNr guibg=#181818
+highlight EndOfBuffer guibg=#181818
+
+" Current line highlight for line number column
+highlight CursorLineNr guibg=#222222
+
+" Make the end of buffer line marks disappear
+highlight EndOfBuffer guifg=bg
+
+" Make underlined text look nicer
+highlight Underlined guisp=#cacaca
+
+" Error-highlight beyond 120 chars
+match Error /\%121v.\+/
+
+" GitGutter colours
+highlight GitGutterAddLineNr guifg=#a0eaa0
+highlight GitGutterChangeLineNr guifg=#5fa1d8
+highlight GitGutterChangeDeleteLineNr guifg=#c083ba
+highlight GitGutterDeleteLineNr guifg=#ea8080
 
 "-----------------------------------
 " GENERAL KEY MAPPINGS
@@ -159,65 +236,3 @@ tnoremap <C-u> <Esc>
 
 " Ctrl+Bksp would otherwise insert a keycode
 tnoremap <C-Backspace> <Backspace>
-
-"-----------------------------------
-" PLUGINS
-"-----------------------------------
-
-let g:plug_window="botright 15new"
-
-call plug#begin(stdpath('data').'\plugged')
-Plug 'sheerun/vim-polyglot'
-Plug 'tomasiser/vim-code-dark'
-Plug 'mhinz/vim-startify'
-Plug 'itchyny/lightline.vim'
-Plug 'tpope/vim-surround'
-Plug 'airblade/vim-gitgutter'
-Plug 'psliwka/vim-smoothie'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'jremmen/vim-ripgrep'  " Requires rg in path
-call plug#end()
-
-" Colours
-colorscheme codedark
-
-" Make the end of buffer line marks disappear
-highlight EndOfBuffer guifg=bg
-
-" Make underlined text look nicer
-highlight Underlined guisp=#cacaca
-
-" Colour the line numbers based on the git diff
-let g:gitgutter_signs = 0
-let g:gitgutter_highlight_lines = 0
-let g:gitgutter_highlight_linenrs = 1
-highlight GitGutterAddLineNr guifg=#a0eaa0
-highlight GitGutterChangeLineNr guifg=#5fa1d8
-highlight GitGutterChangeDeleteLineNr guifg=#c083ba
-highlight GitGutterDeleteLineNr guifg=#ea8080
-
-" Status bar config
-let g:lightline = {
-\   'colorscheme':  'seoul256',
-\   'component':    {'filename': '%f',
-\                    'lineinfo': 'line %l/%{line("$")}',
-\                    'colinfo': 'col %c/%{col("$")-1}'},
-\   'active':       {'left': [
-\                       ['mode', 'paste'],
-\                       ['filename', 'modified'],
-\                       ['lineinfo'],
-\                       ['colinfo']
-\                   ],
-\                    'right': [
-\                       ['winnr'],
-\                       ['fileformat', 'fileencoding', 'filetype']
-\                   ]},
-\   'inactive':     {'left': [
-\                       ['filename', 'modified'],
-\                       ['lineinfo'],
-\                       ['colinfo']
-\                   ],
-\                    'right': [
-\                       ['winnr']
-\                   ]}
-\ }
