@@ -51,6 +51,9 @@ noremap <Space> :
 noremap <CR> /
 noremap <S-CR> ?
 
+" Ctrl+o/p to move back/forward through the jump list
+noremap <C-p> <C-i>
+
 " Shift+k to yank
 noremap K y
 
@@ -109,9 +112,9 @@ noremap <silent> <Leader>d :call CocAction("showSignatureHelp")<CR>
 " KEY MAPPINGS FOR WINDOWS/BUFFERS
 "-----------------------------------
 
-" Ctrl+j/k to cycle through windows
-noremap <C-k> <C-w>W
-noremap <C-j> <C-w>w
+" Tab/Shift+Tab to cycle through windows
+noremap <Tab> <C-w>w
+noremap <S-Tab> <C-w>W
 
 " Ctrl+h/l to go to first/last window
 noremap <C-h> <C-w>t
