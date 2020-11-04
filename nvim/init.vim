@@ -152,6 +152,9 @@ noremap K y
 " Ctrl+a to switch to alternate buffer
 noremap <C-a> <C-^>
 
+" Ctrl+s to search for the word under the cursor
+noremap <C-s> :Rg<CR>
+
 " <Leader>+p to update plugins
 noremap <Leader>p :so $MYVIMRC<CR>:PlugInstall<CR>:PlugUpdate<CR>:CocUpdate<CR>
 
