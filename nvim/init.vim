@@ -1,3 +1,4 @@
+" TODO: change background color based on how far down the file
 " TODO: use drop for coc instead of edit
 " TODO: fade inactive windows so the active one is clearly visible
 " TODO: status line:
@@ -98,8 +99,10 @@ colorscheme codedark
 highlight Normal guibg=#181818
 highlight LineNr guibg=#181818
 highlight EndOfBuffer guibg=#181818
+highlight VertSplit guibg=#222222
 
-" Current line highlight for line number column
+" Current line highlight
+highlight CursorLine guibg=#222222
 highlight CursorLineNr guibg=#222222
 
 " Make the end of buffer line marks disappear
@@ -108,8 +111,20 @@ highlight EndOfBuffer guifg=bg
 " Make underlined text look nicer
 highlight Underlined guisp=#cacaca
 
-" Error-highlight beyond 120 chars
-match Error /\%121v.\+/
+" Turn off internal error highlighting
+highlight clear Error
+
+" Like colorcolumn but error highlight
+autocmd WinNew,VimEnter * :match ErrorMsg /\%121v./
+
+" Folds
+highlight Folded gui=underline guisp=#3f3f46
+
+" Coc errors/warnings
+highlight CocErrorSign guifg=#df4040
+highlight CocErrorHighlight gui=underline guisp=#df4040
+highlight CocWarningSign guifg=#e0d000
+highlight CocWarningHighlight gui=underline guisp=#e0d000
 
 " GitGutter colours
 highlight GitGutterAddLineNr guifg=#a0eaa0
@@ -140,11 +155,8 @@ noremap <C-a> <C-^>
 " <Leader>+p to update plugins
 noremap <Leader>p :so $MYVIMRC<CR>:PlugInstall<CR>:PlugUpdate<CR>:CocUpdate<CR>
 
-" Alt+Enter to show git changes
-noremap <A-CR> :GitGutterFold<CR>gg
-
-" <Leader>+n to clear search highlighting
-noremap <Leader>n :noh<CR>
+" Ctrl+n to clear search highlighting
+noremap <C-n> :noh<CR>
 
 " Ctrl+V to paste from clipboard (insert/command mode)
 inoremap <C-v> <C-r>+
@@ -153,6 +165,26 @@ cnoremap <C-v> <C-r>+
 " Ctrl+Backspace to delete the previous word (insert/command mode)
 inoremap <C-Backspace> <C-w>
 cnoremap <C-Backspace> <C-w>
+
+" Alt+Enter to show git changes
+let g:is_code_folded = v:false
+noremap <silent> <A-CR> :call ToggleGitGutterFold()<CR>
+function! ToggleGitGutterFold()
+    if g:is_code_folded
+        GitGutterFold
+        let g:is_code_folded = v:false
+    else
+        GitGutterFold|normal gg
+        let g:is_code_folded = v:true
+    endif
+
+    " For some reason unfolding causing lightline to select the wrong window,
+    " so we need to call update here to fix it
+    call lightline#update()
+endfunction
+
+" F2 to rename current file
+nnoremap <silent> <F2> :CocCommand workspace.renameCurrentFile<CR>
 
 " F11 to toggle fullscreen
 noremap <F11> :call ToggleFullscreen()<CR>
@@ -173,20 +205,27 @@ map ghu <Plug>(GitGutterUndoHunk)
 " KEY MAPPINGS FOR INTELLISENSE
 "-----------------------------------
 
-" Ctrl+Space to refresh CoC autocompletion
+" Ctrl+Space to refresh Coc autocompletion
 inoremap <silent><expr> <C-Space> coc#refresh()
 
 " Tab/Shift+Tab to navigate autocomplete menu if it's visible
 inoremap <silent><expr> <Tab> pumvisible() ? "<C-n>" : "<Tab>"
 inoremap <silent><expr> <S-Tab> pumvisible() ? "<C-p>" : "<S-Tab>"
 
-" <Leader>+z/x to go to declaration/definition
-map <Leader>z <Plug>(coc-declaration)
-map <Leader>x <Plug>(coc-definition)
+" Ctrl+z/x to go to declaration/definition
+map <C-z> <Plug>(coc-declaration)
+map <C-x> <Plug>(coc-definition)
 
-" <Leader>+s/d to show documentation/parameter hints
-noremap <silent> <Leader>s :call CocAction("doHover")<CR>
-noremap <silent> <Leader>d :call CocAction("showSignatureHelp")<CR>
+" Ctrl+Space/Ctrl+Shift+Space to show documentation/parameter hints
+noremap <silent> <C-Space> :call CocAction("doHover")<CR>
+noremap <silent> <C-S-Space> :call CocAction("showSignatureHelp")<CR>
+
+" Alt+o to switch header/source
+noremap <silent> <A-o> :CocCommand clangd.switchSourceHeader<CR>
+
+" ]+p/[+p to navigate Coc diagnostics
+map <silent> ]e <Plug>(coc-diagnostic-next)
+map <silent> [e <Plug>(coc-diagnostic-prev)
 
 "-----------------------------------
 " KEY MAPPINGS FOR WINDOWS/BUFFERS

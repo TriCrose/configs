@@ -1,3 +1,5 @@
 {
+    "diagnostic.enableSign": false,
+    "diagnostic.enableHighlightLineNumber": false,
     "python.jediEnabled": false
 }
