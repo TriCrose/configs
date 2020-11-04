@@ -134,6 +134,9 @@ noremap <C-p> <C-i>
 " Shift+k to yank
 noremap K y
 
+" Ctrl+a to switch to alternate buffer
+noremap <C-a> <C-^>
+
 " <Leader>+p to update plugins
 noremap <Leader>p :so $MYVIMRC<CR>:PlugInstall<CR>:PlugUpdate<CR>:CocUpdate<CR>
 
