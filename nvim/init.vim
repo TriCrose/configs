@@ -155,9 +155,9 @@ cnoremap <C-Backspace> <C-w>
 noremap <F11> :call ToggleFullscreen()<CR>
 function! ToggleFullscreen()
     if g:neovide_fullscreen
-        :let g:neovide_fullscreen=v:false
+        let g:neovide_fullscreen=v:false
     else
-        :let g:neovide_fullscreen=v:true
+        let g:neovide_fullscreen=v:true
     endif
 endfunction
 
@@ -193,10 +193,6 @@ noremap <silent> <Leader>d :call CocAction("showSignatureHelp")<CR>
 noremap <Tab> <C-w>w
 noremap <S-Tab> <C-w>W
 
-" Ctrl+h/l to go to first/last window
-noremap <C-h> <C-w>t
-noremap <C-l> <C-w>b
-
 " Alt+[h,j,k,l] (or arrows) to resize windows
 noremap <A-h> :vert res -7<CR>
 noremap <A-j> :res -7<CR>
@@ -216,10 +212,14 @@ noremap <C-S-PageDown> :tabm+<CR>
 noremap <C-S-PageUp> :tabm-<CR>
 
 " Split buffer in any direction
-noremap <Leader>j :sp<CR>
-noremap <Leader>l :vs<CR>
-noremap <Leader>k :abo sp<CR>
-noremap <Leader>h :abo vs<CR>
+noremap <C-j> :sp<CR>
+noremap <C-l> :vs<CR>
+noremap <C-k> :abo sp<CR>
+noremap <C-h> :abo vs<CR>
+noremap <C-down> :sp<CR>
+noremap <C-right> :vs<CR>
+noremap <C-up> :abo sp<CR>
+noremap <C-left> :abo vs<CR>
 
 "-----------------------------------
 " KEY MAPPINGS FOR TERMINALS
