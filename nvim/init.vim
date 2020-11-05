@@ -26,6 +26,7 @@ set autoread
 set splitright splitbelow
 set title
 set cursorline
+set colorcolumn=120
 
 " Exclusion paths for searching etc.
 set wildignore=*\node_modules\*,*\__pycache__\*,*\.virtualenv*,*\.git\*,*\.svn\*,*\.hg\*,*\.CVS\*,*\.DS_Store\*
@@ -113,9 +114,6 @@ highlight Underlined guisp=#cacaca
 
 " Turn off internal error highlighting
 highlight clear Error
-
-" Like colorcolumn but error highlight
-autocmd WinNew,VimEnter * :match ErrorMsg /\%121v./
 
 " Folds
 highlight Folded gui=underline guisp=#3f3f46
