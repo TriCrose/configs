@@ -147,6 +147,9 @@ noremap <C-p> <C-i>
 " Shift+k to yank
 noremap K y
 
+" Shift+3/4 for home/end
+noremap £ ^
+
 " Ctrl+a to switch to alternate buffer
 noremap <C-a> <C-^>
 
