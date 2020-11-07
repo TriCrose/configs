@@ -65,29 +65,37 @@ let g:gitgutter_highlight_lines = 0
 let g:gitgutter_highlight_linenrs = 1
 
 " Status bar config
-let g:lightline = {
+let g:lightline =
+\ {
 \   'colorscheme':  'seoul256',
-\   'component':    {'filename': '%f',
-\                    'lineinfo': 'line %l/%{line("$")}',
-\                    'colinfo': 'col %c/%{col("$")-1}'},
-\   'active':       {'left': [
+\   'enable':       {
+\                       'tabline': 0,
+\                       'statusline': 1
+\                   },
+\   'component':    {
+\                    'filename': '%f : %l',
+\                    'lineinfo': '%{line("$")} lines',
+\                    'colinfo': 'col %c'
+\                   },
+\   'active':       {
+\                    'left': [
 \                       ['mode', 'paste'],
 \                       ['filename', 'modified'],
-\                       ['lineinfo'],
-\                       ['colinfo']
+\                       ['lineinfo']
 \                   ],
 \                    'right': [
 \                       ['winnr'],
-\                       ['fileformat', 'fileencoding', 'filetype']
-\                   ]},
-\   'inactive':     {'left': [
-\                       ['filename', 'modified'],
-\                       ['lineinfo'],
+\                       ['fileformat', 'fileencoding', 'filetype'],
 \                       ['colinfo']
+\                   ]},
+\   'inactive':     {
+\                    'left': [
+\                       ['filename', 'modified'],
+\                       ['lineinfo']
 \                   ],
 \                    'right': [
 \                       ['winnr']
-\                   ]}
+\                   ]},
 \ }
 
 "-----------------------------------
@@ -100,6 +108,7 @@ colorscheme codedark
 highlight Normal guibg=#181818
 highlight LineNr guibg=#181818
 highlight EndOfBuffer guibg=#181818
+highlight NonText guibg=#222222
 highlight VertSplit guibg=#222222
 
 " Current line highlight
@@ -117,6 +126,11 @@ highlight clear Error
 
 " Folds
 highlight Folded gui=underline guisp=#3f3f46
+
+" Tab line
+highlight TabLine guifg=#707070 guibg=#222222
+highlight TabLineFill guibg=#222222
+highlight TabLineSel guibg=#222222 guisp=#cacaca
 
 " Coc errors/warnings
 highlight CocErrorSign guifg=#df4040
@@ -155,6 +169,7 @@ noremap <C-a> <C-^>
 
 " Ctrl+s to search for the word under the cursor
 noremap <C-s> :Rg<CR>
+noremap <C-A-s> :Rg <cword> %<CR>
 
 " <Leader>+p to update plugins
 noremap <Leader>p :so $MYVIMRC<CR>:PlugInstall<CR>:PlugUpdate<CR>:CocUpdate<CR>
@@ -249,6 +264,10 @@ noremap <A-down> :res -7<CR>
 noremap <A-up> :res +7<CR>
 noremap <A-right> :vert res +7<CR>
 
+" Create new tab/create tab split
+noremap <A-n> :tabe<CR>
+noremap <A-s> :tab sp<CR>
+
 " Ctrl+Tab/Ctrl+Shift+Tab to move between tab pages
 noremap <C-Tab> :tabn<CR>
 noremap <C-S-Tab> :tabp<CR>
@@ -256,6 +275,18 @@ noremap <C-S-Tab> :tabp<CR>
 " Ctrl+Shift+(PgUp/PgDn) to move tab pages right/left
 noremap <C-S-PageDown> :tabm+<CR>
 noremap <C-S-PageUp> :tabm-<CR>
+
+" Go to tab number
+noremap <A-1> 1gt
+noremap <A-2> 2gt
+noremap <A-3> 3gt
+noremap <A-4> 4gt
+noremap <A-5> 5gt
+noremap <A-6> 6gt
+noremap <A-7> 7gt
+noremap <A-8> 8gt
+noremap <A-9> 9gt
+noremap <A-0> 10gt
 
 " Split buffer in any direction
 noremap <C-j> :sp<CR>
