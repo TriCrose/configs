@@ -197,7 +197,7 @@ function! ToggleGitGutterFold()
         let g:is_code_folded = v:true
     endif
 
-    " For some reason unfolding causing lightline to select the wrong window,
+    " For some reason unfolding causes lightline to select the wrong window,
     " so we need to call update here to fix it
     call lightline#update()
 endfunction
