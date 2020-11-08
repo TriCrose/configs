@@ -108,7 +108,7 @@ colorscheme codedark
 highlight Normal guibg=#181818
 highlight LineNr guibg=#181818
 highlight EndOfBuffer guibg=#181818
-highlight NonText guibg=#222222
+highlight NonText guibg=#181818
 highlight VertSplit guibg=#222222
 
 " Current line highlight
@@ -254,6 +254,10 @@ map <silent> [e <Plug>(coc-diagnostic-prev)
 noremap <Tab> <C-w>w
 noremap <S-Tab> <C-w>W
 
+" Ctrl+Tab/Ctrl+Shift+Tab to go to first/last window
+noremap <C-Tab> <C-w>b
+noremap <C-S-Tab> <C-w>t
+
 " Alt+[h,j,k,l] (or arrows) to resize windows
 noremap <A-h> :vert res -7<CR>
 noremap <A-j> :res -7<CR>
@@ -264,13 +268,10 @@ noremap <A-down> :res -7<CR>
 noremap <A-up> :res +7<CR>
 noremap <A-right> :vert res +7<CR>
 
-" Create new tab/create tab split
+" Open/close tabs
 noremap <A-n> :tabe<CR>
 noremap <A-s> :tab sp<CR>
-
-" Ctrl+Tab/Ctrl+Shift+Tab to move between tab pages
-noremap <C-Tab> :tabn<CR>
-noremap <C-S-Tab> :tabp<CR>
+noremap <A-w> :tabc<CR>
 
 " Ctrl+Shift+(PgUp/PgDn) to move tab pages right/left
 noremap <C-S-PageDown> :tabm+<CR>
