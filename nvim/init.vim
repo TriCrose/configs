@@ -271,7 +271,7 @@ noremap <A-right> :vert res +7<CR>
 " Open/close tabs
 noremap <A-n> :tabe<CR>
 noremap <A-s> :tab sp<CR>
-noremap <A-w> :tabc<CR>
+noremap <A-q> :tabc<CR>
 
 " Ctrl+Shift+(PgUp/PgDn) to move tab pages right/left
 noremap <C-S-PageDown> :tabm+<CR>
