@@ -52,7 +52,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tomasiser/vim-code-dark'
 Plug 'mhinz/vim-startify'
 Plug 'itchyny/lightline.vim'
-Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'psliwka/vim-smoothie'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -161,6 +160,15 @@ noremap <C-p> <C-i>
 " Shift+k to yank
 noremap K y
 
+" Use f/s to find forwards/backwards
+noremap s F
+noremap F t
+noremap S T
+
+" Use t to delete and enter insert mode
+noremap t s
+noremap T S
+
 " Shift+3/4 for home/end
 noremap £ ^
 
@@ -172,7 +180,7 @@ noremap <C-s> :Rg<CR>
 noremap <C-A-s> :Rg <cword> %<CR>
 
 " <Leader>+p to update plugins
-noremap <Leader>p :so $MYVIMRC<CR>:PlugInstall<CR>:PlugUpdate<CR>:CocUpdate<CR>
+noremap <Leader>p :so $MYVIMRC<CR>:PlugUpdate<CR>:CocUpdate<CR>
 
 " Ctrl+n to clear search highlighting
 noremap <C-n> :noh<CR>
@@ -242,7 +250,7 @@ noremap <silent> <C-S-Space> :call CocAction("showSignatureHelp")<CR>
 " Alt+o to switch header/source
 noremap <silent> <A-o> :CocCommand clangd.switchSourceHeader<CR>
 
-" ]+p/[+p to navigate Coc diagnostics
+" ]+e/[+e to navigate Coc diagnostics
 map <silent> ]e <Plug>(coc-diagnostic-next)
 map <silent> [e <Plug>(coc-diagnostic-prev)
 
@@ -280,7 +288,7 @@ noremap <S-A-right> :vert res +25<CR>
 " Open/close tabs
 noremap <A-n> :tabe<CR>
 noremap <A-s> :tab sp<CR>
-noremap <A-w> :tabc<CR>
+noremap <A-q> :tabc<CR>
 
 " Ctrl+Shift+(PgUp/PgDn) to move tab pages right/left
 noremap <C-S-PageDown> :tabm+<CR>
