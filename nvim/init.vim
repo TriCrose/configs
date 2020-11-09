@@ -250,9 +250,8 @@ map <silent> [e <Plug>(coc-diagnostic-prev)
 " KEY MAPPINGS FOR WINDOWS/BUFFERS
 "-----------------------------------
 
-" Tab/Shift+Tab to cycle through windows
+" Tab to go to window number
 noremap <Tab> <C-w>w
-noremap <S-Tab> <C-w>W
 
 " Ctrl+Tab/Ctrl+Shift+Tab to go to first/last window
 noremap <C-Tab> <C-w>b
@@ -267,6 +266,16 @@ noremap <A-left> :vert res -7<CR>
 noremap <A-down> :res -7<CR>
 noremap <A-up> :res +7<CR>
 noremap <A-right> :vert res +7<CR>
+
+" Shift+Alt+[h,j,k,l] (or arrows) to resize windows in greater amounts
+noremap <S-A-h> :vert res -25<CR>
+noremap <S-A-j> :res -25<CR>
+noremap <S-A-k> :res +25<CR>
+noremap <S-A-l> :vert res +25<CR>
+noremap <S-A-left> :vert res -25<CR>
+noremap <S-A-down> :res -25<CR>
+noremap <S-A-up> :res +25<CR>
+noremap <S-A-right> :vert res +25<CR>
 
 " Open/close tabs
 noremap <A-n> :tabe<CR>
@@ -314,3 +323,4 @@ tnoremap <C-u> <Esc>
 
 " Ctrl+Bksp would otherwise insert a keycode
 tnoremap <C-Backspace> <Backspace>
+
