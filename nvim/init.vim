@@ -172,6 +172,11 @@ noremap T S
 " Shift+3/4 for home/end
 noremap £ ^
 
+" <Leader>+h,m,l instead of zt/zz/zb
+noremap <Leader>h zt
+noremap <Leader>m zz
+noremap <Leader>l zb
+
 " Ctrl+a to switch to alternate buffer
 noremap <C-a> <C-^>
 
@@ -266,14 +271,14 @@ noremap <C-Tab> <C-w>b
 noremap <C-S-Tab> <C-w>t
 
 " Alt+[h,j,k,l] (or arrows) to resize windows
-noremap <A-h> :vert res -7<CR>
-noremap <A-j> :res -7<CR>
-noremap <A-k> :res +7<CR>
-noremap <A-l> :vert res +7<CR>
-noremap <A-left> :vert res -7<CR>
-noremap <A-down> :res -7<CR>
-noremap <A-up> :res +7<CR>
-noremap <A-right> :vert res +7<CR>
+noremap <A-h> :vert res -5<CR>
+noremap <A-j> :res -5<CR>
+noremap <A-k> :res +5<CR>
+noremap <A-l> :vert res +5<CR>
+noremap <A-left> :vert res -5<CR>
+noremap <A-down> :res -5<CR>
+noremap <A-up> :res +5<CR>
+noremap <A-right> :vert res +5<CR>
 
 " Shift+Alt+[h,j,k,l] (or arrows) to resize windows in greater amounts
 noremap <S-A-h> :vert res -25<CR>
