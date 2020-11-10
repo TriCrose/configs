@@ -108,6 +108,7 @@ highlight Normal guibg=#181818
 highlight LineNr guibg=#181818
 highlight EndOfBuffer guibg=#181818
 highlight NonText guibg=#181818
+highlight ModeMsg guibg=#181818
 highlight VertSplit guibg=#222222
 
 " Current line highlight
