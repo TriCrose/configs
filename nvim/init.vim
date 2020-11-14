@@ -264,8 +264,9 @@ map <silent> [e <Plug>(coc-diagnostic-prev)
 " KEY MAPPINGS FOR WINDOWS/BUFFERS
 "-----------------------------------
 
-" Tab to go to window number
+" Tab/Shift+Tab to cycle through windows or go to window number
 noremap <Tab> <C-w>w
+noremap <S-Tab> <C-w>W
 
 " Ctrl+Tab/Ctrl+Shift+Tab to go to first/last window
 noremap <C-Tab> <C-w>b
