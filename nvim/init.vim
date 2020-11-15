@@ -20,6 +20,7 @@ set number
 set signcolumn=no
 set autoindent tabstop=4 shiftwidth=4 expandtab
 set list lcs=trail:•,tab:>-
+set fillchars+=fold:-
 set clipboard=unnamedplus
 set ignorecase smartcase
 set autoread
@@ -27,6 +28,7 @@ set splitright splitbelow
 set title
 set cursorline
 set colorcolumn=120
+set noshowmode
 
 " Exclusion paths for searching etc.
 set wildignore=*\node_modules\*,*\__pycache__\*,*\.virtualenv*,*\.git\*,*\.svn\*,*\.hg\*,*\.CVS\*,*\.DS_Store\*

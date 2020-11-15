@@ -103,6 +103,7 @@ misc:
  - ar[gs] {arglist} -> define {arglist} as the new argument list (loads all arguments into buffers) and edit the first one
  - :browse {command} -> open a file select dialog for arguments to {command} (e.g. ol[dfiles] for MRU)
  - :%y -> yank entire file
+ - :saveas -> save as
 
 vim trainer:
  - trains lookahead by giving you new instructions as you complete the current ones
