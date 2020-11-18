@@ -6,12 +6,12 @@
 " TODO: fix gitgutter preview colours
 " TODO: command mode yank
 
-"-----------------------------------
+"----------------------------------------
 " SETTINGS
-"-----------------------------------
+"----------------------------------------
 
 " General settings
-set breakindent showbreak=>>
+set breakindent showbreak=>>>
 set guifont=Fira\ Code\ Retina:h12
 set updatetime=100
 set mouse=a
@@ -43,9 +43,9 @@ if filereadable(stdpath('config') . '\system-specific.vim')
     exec 'source ' . stdpath('config') . '\system-specific.vim'
 endif
 
-"-----------------------------------
+"----------------------------------------
 " PLUGINS
-"-----------------------------------
+"----------------------------------------
 
 let g:plug_window="botright 15new"
 
@@ -99,9 +99,9 @@ let g:lightline =
 \                   ]},
 \ }
 
-"-----------------------------------
+"----------------------------------------
 " COLOURS
-"-----------------------------------
+"----------------------------------------
 
 colorscheme codedark
 
@@ -146,9 +146,9 @@ highlight GitGutterChangeLineNr guifg=#5fa1d8
 highlight GitGutterChangeDeleteLineNr guifg=#c083ba
 highlight GitGutterDeleteLineNr guifg=#ea8080
 
-"-----------------------------------
+"----------------------------------------
 " GENERAL KEY MAPPINGS
-"-----------------------------------
+"----------------------------------------
 
 " Space to enter command mode
 noremap <Space> :
@@ -236,9 +236,9 @@ map ghp <Plug>(GitGutterPreviewHunk)
 map ghs <Plug>(GitGutterStageHunk)
 map ghu <Plug>(GitGutterUndoHunk)
 
-"-----------------------------------
+"----------------------------------------
 " KEY MAPPINGS FOR INTELLISENSE
-"-----------------------------------
+"----------------------------------------
 
 " Ctrl+Space to refresh Coc autocompletion
 inoremap <silent><expr> <C-Space> coc#refresh()
@@ -262,17 +262,13 @@ noremap <silent> <A-o> :CocCommand clangd.switchSourceHeader<CR>
 map <silent> ]e <Plug>(coc-diagnostic-next)
 map <silent> [e <Plug>(coc-diagnostic-prev)
 
-"-----------------------------------
-" KEY MAPPINGS FOR WINDOWS/BUFFERS
-"-----------------------------------
+"----------------------------------------
+" KEY MAPPINGS FOR BUFFERS/WINDOWS/TABS
+"----------------------------------------
 
 " Tab/Shift+Tab to cycle through windows or go to window number
 noremap <Tab> <C-w>w
 noremap <S-Tab> <C-w>W
-
-" Ctrl+Tab/Ctrl+Shift+Tab to go to first/last window
-noremap <C-Tab> <C-w>b
-noremap <C-S-Tab> <C-w>t
 
 " Alt+[h,j,k,l] (or arrows) to resize windows
 noremap <A-h> :vert res -5<CR>
@@ -299,7 +295,11 @@ noremap <A-n> :tabe<CR>
 noremap <A-s> :tab sp<CR>
 noremap <A-q> :tabc<CR>
 
-" Ctrl+Shift+(PgUp/PgDn) to move tab pages right/left
+" Ctrl+Tab/Ctrl+Shift+Tab to navigate tabs
+noremap <C-Tab> <C-PageDown>
+noremap <C-S-Tab> <C-PageUp>
+
+" Ctrl+Shift+[PgUp,PgDn] to move tab pages right/left
 noremap <C-S-PageDown> :tabm+<CR>
 noremap <C-S-PageUp> :tabm-<CR>
 
@@ -325,9 +325,9 @@ noremap <C-right> :vs<CR>
 noremap <C-up> :abo sp<CR>
 noremap <C-left> :abo vs<CR>
 
-"-----------------------------------
+"----------------------------------------
 " KEY MAPPINGS FOR TERMINALS
-"-----------------------------------
+"----------------------------------------
 
 " Ctrl+V to paste
 tnoremap <C-v> <C-\><C-n>pa
