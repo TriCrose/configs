@@ -58,7 +58,19 @@ Plug 'airblade/vim-gitgutter'
 Plug 'psliwka/vim-smoothie'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jremmen/vim-ripgrep'  " Requires rg in path
+Plug 'airblade/vim-rooter'
 call plug#end()
+
+" 'F' is faster to type than 'Rg'
+command! -nargs=* F Rg <args>
+
+" vim-smoothie mappings are below
+let g:smoothie_no_default_mappings = v:true
+
+" vim-rooter settings
+let g:rooter_cd_cmd = 'lcd'
+let g:rooter_silent_chdir = 1
+let g:rooter_manual_only = 1
 
 " Colour the line numbers based on the git diff
 let g:gitgutter_signs = 0
@@ -153,9 +165,19 @@ highlight GitGutterDeleteLineNr guifg=#ea8080
 " Space to enter command mode
 noremap <Space> :
 
-" Enter/Shift+Enter to search
-noremap <CR> /
-noremap <S-CR> ?
+" Ctrl+d/s to search forwards/backwards
+noremap <C-d> /
+noremap <C-s> ?
+
+" Enter for scrolling
+noremap <CR> <PageDown>
+noremap <S-CR> <PageUp>
+noremap <C-CR> <C-d>
+noremap <C-S-CR> <C-u>
+nmap <CR> <Plug>(SmoothieForwards)
+nmap <S-CR> <Plug>(SmoothieBackwards)
+nmap <C-CR> <Plug>(SmoothieDownwards)
+nmap <C-S-CR> <Plug>(SmoothieUpwards)
 
 " Ctrl+o/p to move back/forward through the jump list
 noremap <C-p> <C-i>
@@ -184,8 +206,14 @@ noremap <Leader>l zb
 noremap <C-a> <C-^>
 
 " Ctrl+s to search for the word under the cursor
-noremap <C-s> :Rg<CR>
-noremap <C-A-s> :Rg <cword> %<CR>
+noremap <C-f> :Rg<CR>
+noremap <C-A-f> :Rg <cword> %<CR>
+
+" Ctrl+u to show working directory
+noremap <C-u> :pwd<CR>
+
+" Ctrl+b to go to project root
+noremap <C-b> :Rooter<CR>:echom "vim-rooter: " . getcwd()<CR>
 
 " <Leader>+p to update plugins
 noremap <Leader>p :so $MYVIMRC<CR>:PlugUpdate<CR>:CocUpdate<CR>
@@ -203,7 +231,7 @@ cnoremap <C-Backspace> <C-w>
 
 " Alt+Enter to show git changes
 let g:is_code_folded = v:false
-noremap <silent> <A-CR> :call ToggleGitGutterFold()<CR>
+noremap <silent> ghi :call ToggleGitGutterFold()<CR>
 function! ToggleGitGutterFold()
     if g:is_code_folded
         GitGutterFold
