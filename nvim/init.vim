@@ -68,7 +68,7 @@ command! -nargs=* F Rg <args>
 let g:smoothie_no_default_mappings = v:true
 
 " vim-rooter settings
-let g:rooter_cd_cmd = 'lcd'
+let g:rooter_cd_cmd = 'tcd'
 let g:rooter_silent_chdir = 1
 let g:rooter_manual_only = 1
 
