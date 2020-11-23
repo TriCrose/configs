@@ -38,11 +38,6 @@ let g:neovide_cursor_trail_size=0.3
 let g:neovide_refresh_rate=60
 let g:neovide_transparency=0.95
 
-" System-specific (not source-controlled)
-if filereadable(stdpath('config') . '\system-specific.vim')
-    exec 'source ' . stdpath('config') . '\system-specific.vim'
-endif
-
 "----------------------------------------
 " PLUGINS
 "----------------------------------------
@@ -61,14 +56,7 @@ Plug 'jremmen/vim-ripgrep'  " Requires rg in path
 Plug 'airblade/vim-rooter'
 call plug#end()
 
-" 'F' is faster to type than 'Rg'
-command! -nargs=* F Rg <args>
-
-" vim-smoothie mappings are below
-let g:smoothie_no_default_mappings = v:true
-
 " vim-rooter settings
-let g:rooter_cd_cmd = 'tcd'
 let g:rooter_silent_chdir = 1
 let g:rooter_manual_only = 1
 
@@ -165,19 +153,9 @@ highlight GitGutterDeleteLineNr guifg=#ea8080
 " Space to enter command mode
 noremap <Space> :
 
-" Ctrl+d/s to search forwards/backwards
-noremap <C-d> /
-noremap <C-s> ?
-
-" Enter for scrolling
-noremap <CR> <PageDown>
-noremap <S-CR> <PageUp>
-noremap <C-CR> <C-d>
-noremap <C-S-CR> <C-u>
-nmap <CR> <Plug>(SmoothieForwards)
-nmap <S-CR> <Plug>(SmoothieBackwards)
-nmap <C-CR> <Plug>(SmoothieDownwards)
-nmap <C-S-CR> <Plug>(SmoothieUpwards)
+" Enter/Shift+Enter to search
+noremap <CR> /
+noremap <S-CR> ?
 
 " Ctrl+o/p to move back/forward through the jump list
 noremap <C-p> <C-i>
@@ -206,14 +184,14 @@ noremap <Leader>l zb
 noremap <C-a> <C-^>
 
 " Ctrl+s to search for the word under the cursor
-noremap <C-f> :Rg<CR>
-noremap <C-A-f> :Rg <cword> %<CR>
+noremap <C-s> :Rg<CR>
+noremap <C-A-s> :Rg <cword> %<CR>
 
-" Ctrl+u to show working directory
-noremap <C-u> :pwd<CR>
+" Ctrl+z to show working directory
+noremap <C-z> :pwd<CR>
 
-" Ctrl+b to go to project root
-noremap <C-b> :Rooter<CR>:echom "vim-rooter: " . getcwd()<CR>
+" Ctrl+alt+z to go to project root
+noremap <C-A-z> :Rooter<CR>:echom "vim-rooter: " . getcwd()<CR>
 
 " <Leader>+p to update plugins
 noremap <Leader>p :so $MYVIMRC<CR>:PlugUpdate<CR>:CocUpdate<CR>
@@ -231,7 +209,7 @@ cnoremap <C-Backspace> <C-w>
 
 " Alt+Enter to show git changes
 let g:is_code_folded = v:false
-noremap <silent> ghi :call ToggleGitGutterFold()<CR>
+noremap <silent> <A-CR> :call ToggleGitGutterFold()<CR>
 function! ToggleGitGutterFold()
     if g:is_code_folded
         GitGutterFold
@@ -276,8 +254,8 @@ inoremap <silent><expr> <Tab> pumvisible() ? "<C-n>" : "<Tab>"
 inoremap <silent><expr> <S-Tab> pumvisible() ? "<C-p>" : "<S-Tab>"
 
 " Ctrl+z/x to go to declaration/definition
-map <C-z> <Plug>(coc-declaration)
 map <C-x> <Plug>(coc-definition)
+map <C-A-x> <Plug>(coc-declaration)
 
 " Ctrl+Space/Ctrl+Shift+Space to show documentation/parameter hints
 noremap <silent> <C-Space> :call CocAction("doHover")<CR>
@@ -369,3 +347,10 @@ tnoremap <C-u> <Esc>
 " Ctrl+Bksp would otherwise insert a keycode
 tnoremap <C-Backspace> <Backspace>
 
+"----------------------------------------
+" SYSTEM-SPECIFIC
+"----------------------------------------
+
+if filereadable(stdpath('config') . '\system-specific.vim')
+    exec 'source ' . stdpath('config') . '\system-specific.vim'
+endif
