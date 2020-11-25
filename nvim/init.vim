@@ -180,7 +180,7 @@ noremap <Leader>h zt
 noremap <Leader>m zz
 noremap <Leader>l zb
 
-" Ctrl+a to switch to alternate buffer
+" Ctrl+a to switch to the alternate buffer
 noremap <C-a> <C-^>
 
 " Ctrl+s to search for the word under the cursor
@@ -190,16 +190,16 @@ noremap <C-A-s> :Rg <cword> %<CR>
 " Ctrl+z to show working directory
 noremap <C-z> :pwd<CR>
 
-" Ctrl+alt+z to go to project root
+" Ctrl+Alt+z to go to the project root
 noremap <C-A-z> :Rooter<CR>:echom "vim-rooter: " . getcwd()<CR>
 
-" <Leader>+p to update plugins
+" <Leader>+p to update plugins/coc
 noremap <Leader>p :so $MYVIMRC<CR>:PlugUpdate<CR>:CocUpdate<CR>
 
 " Ctrl+n to clear search highlighting
 noremap <C-n> :noh<CR>
 
-" Ctrl+V to paste from clipboard (insert/command mode)
+" Ctrl+v to paste from clipboard (insert/command mode)
 inoremap <C-v> <C-r>+
 cnoremap <C-v> <C-r>+
 
@@ -253,7 +253,7 @@ inoremap <silent><expr> <C-Space> coc#refresh()
 inoremap <silent><expr> <Tab> pumvisible() ? "<C-n>" : "<Tab>"
 inoremap <silent><expr> <S-Tab> pumvisible() ? "<C-p>" : "<S-Tab>"
 
-" Ctrl+z/x to go to declaration/definition
+" Ctrl+x/Ctrl+Alt+x to go to definition/declaration
 map <C-x> <Plug>(coc-definition)
 map <C-A-x> <Plug>(coc-declaration)
 
