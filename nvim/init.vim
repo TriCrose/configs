@@ -11,6 +11,7 @@
 "----------------------------------------
 
 " General settings
+set linebreak
 set breakindent showbreak=>>>
 set guifont=Fira\ Code\ Retina:h12
 set updatetime=100
