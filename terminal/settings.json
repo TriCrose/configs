@@ -44,6 +44,12 @@
         "list":
         [
             {
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "hidden": false,
+                "name": "PowerShell Core",
+                "source": "Windows.Terminal.PowershellCore"
+            },
+            {
                 // Make changes here to the powershell.exe profile.
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "name": "Windows PowerShell",
@@ -62,12 +68,6 @@
                 "hidden": false,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
-            },
-            {
-                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-                "hidden": false,
-                "name": "PowerShell Core",
-                "source": "Windows.Terminal.PowershellCore"
             }
         ]
     },
@@ -86,6 +86,8 @@
         // To learn more about selection, visit https://aka.ms/terminal-selection
         { "command": {"action": "copy", "singleLine": false }, "keys": "ctrl+c" },
         { "command": "paste", "keys": "ctrl+v" },
+        { "command": { "action": "newTab", "index": 0}, "keys": "ctrl+t" },
+        { "command": "closeTab", "keys": "ctrl+w" },
 
         // Press Ctrl+F to open the search box
         { "command": "find", "keys": "ctrl+f" },
