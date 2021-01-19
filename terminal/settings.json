@@ -33,13 +33,12 @@
     {
         "defaults":
         {
-            "useAcrylic": true,
-            "acrylicOpacity": 0.6,
             "colorScheme": "One Half Dark",
             "cursorShape": "emptyBox",
             "fontFace": "Fira Code",
             "fontSize": 10,
-            "startingDirectory": "C:\\"
+            "startingDirectory": "C:\\",
+            "background": "#1f2227"
         },
         "list":
         [
