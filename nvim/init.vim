@@ -55,6 +55,7 @@ Plug 'psliwka/vim-smoothie'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jremmen/vim-ripgrep'  " Requires rg in path
 Plug 'airblade/vim-rooter'
+Plug 'SpaceVim/vim-swig'
 call plug#end()
 
 " vim-rooter settings
@@ -65,6 +66,10 @@ let g:rooter_manual_only = 1
 let g:gitgutter_signs = 0
 let g:gitgutter_highlight_lines = 0
 let g:gitgutter_highlight_linenrs = 1
+
+" Set *.i/*.swg to SWIG filetype
+au BufNewFile,BufRead *.i set filetype=swig
+au BufNewFile,BufRead *.swg set filetype=swig
 
 " Status bar config
 let g:lightline =
