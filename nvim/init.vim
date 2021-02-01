@@ -56,6 +56,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jremmen/vim-ripgrep'  " Requires rg in path
 Plug 'airblade/vim-rooter'
 Plug 'SpaceVim/vim-swig'
+Plug 'junegunn/fzf', {'do':{->fzf#install()}}
 call plug#end()
 
 " vim-rooter settings
@@ -70,6 +71,9 @@ let g:gitgutter_highlight_linenrs = 1
 " Set *.i/*.swg to SWIG filetype
 au BufNewFile,BufRead *.i set filetype=swig
 au BufNewFile,BufRead *.swg set filetype=swig
+
+" FZF
+let g:fzf_layout = {"window": "botright 20new"}
 
 " Status bar config
 let g:lightline =
@@ -199,6 +203,9 @@ noremap <C-z> :pwd<CR>
 " Ctrl+Alt+z to go to the project root
 noremap <C-A-z> :Rooter<CR>:echom "vim-rooter: " . getcwd()<CR>
 
+" Ctrl+Space to trigger file finder
+noremap <C-Space> :FZF<CR>
+
 " <Leader>+p to update plugins/coc
 noremap <Leader>p :so $MYVIMRC<CR>:PlugUpdate<CR>:CocUpdate<CR>
 
@@ -263,9 +270,8 @@ inoremap <silent><expr> <S-Tab> pumvisible() ? "<C-p>" : "<S-Tab>"
 map <C-x> <Plug>(coc-definition)
 map <C-A-x> <Plug>(coc-declaration)
 
-" Ctrl+Space/Ctrl+Shift+Space to show documentation/parameter hints
-noremap <silent> <C-Space> :call CocAction("doHover")<CR>
-noremap <silent> <C-S-Space> :call CocAction("showSignatureHelp")<CR>
+" Ctrl+Shift+Space to show documentation
+noremap <silent> <C-S-Space> :call CocAction("doHover")<CR>
 
 " Alt+o to switch header/source
 noremap <silent> <A-o> :CocCommand clangd.switchSourceHeader<CR>
@@ -343,9 +349,6 @@ noremap <C-left> :abo vs<CR>
 
 " Ctrl+V to paste
 tnoremap <C-v> <C-\><C-n>pa
-
-" Escape to exit terminal mode
-tnoremap <Esc> <C-\><C-n>
 
 " Ctrl+u to clear the line
 tnoremap <C-u> <Esc>
