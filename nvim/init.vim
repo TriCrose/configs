@@ -73,7 +73,13 @@ au BufNewFile,BufRead *.i set filetype=swig
 au BufNewFile,BufRead *.swg set filetype=swig
 
 " FZF
-let g:fzf_layout = {"window": "botright 20new"}
+let g:fzf_layout = {"window": "botright 25new"}
+let $FZF_DEFAULT_COMMAND = "rg --files"
+let $FZF_DEFAULT_OPTS = "--preview 'bat -p --color=always --line-range :25 {}'"
+
+function! IsFZFTerminal()
+    return getbufvar("%", "&filetype") == "fzf"
+endfunction
 
 " Status bar config
 let g:lightline =
@@ -350,11 +356,14 @@ noremap <C-left> :abo vs<CR>
 " Ctrl+V to paste
 tnoremap <C-v> <C-\><C-n>pa
 
-" Ctrl+u to clear the line
-tnoremap <C-u> <Esc>
+" Esc to exit terminal-mode (or, if in FZF terminal, just do normal Esc)
+tnoremap <silent><expr> <Esc> IsFZFTerminal() ? "<Esc>" : "<C-\><C-n>"
 
-" Ctrl+Bksp would otherwise insert a keycode
-tnoremap <C-Backspace> <Backspace>
+" Ctrl+Bksp would normally insert a keycode (except in FZF, then just delete word)
+tnoremap <silent><expr> <C-Backspace> IsFZFTerminal() ? "<C-w>" : "<Backspace>"
+
+" Ctrl+u to clear the line
+tnoremap <silent><expr> <C-u> IsFZFTerminal() ? "<C-u>" : "<Esc>"
 
 "----------------------------------------
 " SYSTEM-SPECIFIC
