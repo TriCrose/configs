@@ -256,10 +256,16 @@ function! ToggleFullscreen()
     endif
 endfunction
 
-" GitGutter
+" GitGutter commands for pending hunks
 map ghp <Plug>(GitGutterPreviewHunk)
 map ghs <Plug>(GitGutterStageHunk)
 map ghu <Plug>(GitGutterUndoHunk)
+
+" GitGutter text object selectors for pending hunks
+omap ih <Plug>(GitGutterTextObjectInnerPending)
+omap ah <Plug>(GitGutterTextObjectOuterPending)
+xmap ih <Plug>(GitGutterTextObjectInnerVisual)
+xmap ah <Plug>(GitGutterTextObjectOuterVisual)
 
 "----------------------------------------
 " KEY MAPPINGS FOR INTELLISENSE
@@ -281,6 +287,18 @@ noremap <silent> <C-S-Space> :call CocAction("doHover")<CR>
 
 " Alt+o to switch header/source
 noremap <silent> <A-o> :CocCommand clangd.switchSourceHeader<CR>
+
+" Text object selectors for functions
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+
+" Text object selectors for classes/structs
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
 
 " ]+e/[+e to navigate Coc diagnostics
 map <silent> ]e <Plug>(coc-diagnostic-next)
