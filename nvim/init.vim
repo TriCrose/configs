@@ -210,7 +210,7 @@ noremap <C-z> :pwd<CR>
 noremap <C-A-z> :Rooter<CR>:echom "vim-rooter: " . getcwd()<CR>
 
 " Ctrl+Space to trigger file finder
-noremap <C-Space> :FZF<CR>
+noremap <silent> <C-Space> :FZF<CR>
 
 " <Leader>+p to update plugins/coc
 noremap <Leader>p :so $MYVIMRC<CR>:PlugUpdate<CR>:CocUpdate<CR>
