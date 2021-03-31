@@ -5,6 +5,8 @@
 "       - git branch information
 " TODO: fix gitgutter preview colours
 " TODO: command mode yank
+" TODO: better keybinds for ';', ',' and '.'
+"                  also for '*' and '#'
 
 "----------------------------------------
 " SETTINGS
