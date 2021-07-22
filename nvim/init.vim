@@ -1,4 +1,3 @@
-" TODO: change background color based on how far down the file
 " TODO: use drop for coc instead of edit
 " TODO: fade inactive windows so the active one is clearly visible
 " TODO: status line:
@@ -7,6 +6,7 @@
 " TODO: command mode yank
 " TODO: better keybinds for ';', ',' and '.'
 "                  also for '*' and '#'
+" TODO: show alternative buffer in status bar
 
 "----------------------------------------
 " SETTINGS
