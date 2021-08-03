@@ -7,6 +7,7 @@
 " TODO: better keybinds for ';', ',' and '.'
 "                  also for '*' and '#'
 " TODO: show alternative buffer in status bar
+" TODO: alt+o to switch between header and source (no intellisense)
 
 "----------------------------------------
 " SETTINGS
