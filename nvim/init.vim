@@ -1,13 +1,6 @@
-" TODO: use drop for coc instead of edit
-" TODO: fade inactive windows so the active one is clearly visible
-" TODO: status line:
-"       - git branch information
 " TODO: fix gitgutter preview colours
-" TODO: command mode yank
 " TODO: better keybinds for ';', ',' and '.'
 "                  also for '*' and '#'
-" TODO: show alternative buffer in status bar
-" TODO: alt+o to switch between header and source (no intellisense)
 
 "----------------------------------------
 " SETTINGS
@@ -53,6 +46,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tomasiser/vim-code-dark'
 Plug 'mhinz/vim-startify'
 Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-gitbranch'
 Plug 'airblade/vim-gitgutter'
 Plug 'psliwka/vim-smoothie'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -95,13 +89,15 @@ let g:lightline =
 \   'component':    {
 \                    'filename': '%f : %l',
 \                    'lineinfo': '%{line("$")} lines',
-\                    'colinfo': 'col %c'
+\                    'colinfo': 'col %c',
+\                    'gitbranch': '[%{gitbranch#name()}]'
 \                   },
 \   'active':       {
 \                    'left': [
 \                       ['mode', 'paste'],
 \                       ['filename', 'modified'],
-\                       ['lineinfo']
+\                       ['lineinfo'],
+\                       ['gitbranch']
 \                   ],
 \                    'right': [
 \                       ['winnr'],
