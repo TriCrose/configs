@@ -1,6 +1,7 @@
 " TODO: fix gitgutter preview colours
 " TODO: better keybinds for ';', ',' and '.'
 "                  also for '*' and '#'
+" TODO: make :w also save the vim session
 
 "----------------------------------------
 " SETTINGS
