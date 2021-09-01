@@ -27,6 +27,8 @@ set title
 set cursorline
 set colorcolumn=120
 set noshowmode
+set foldmethod=syntax
+set nofoldenable
 
 " Exclusion paths for searching etc.
 set wildignore=*\node_modules\*,*\__pycache__\*,*\.virtualenv*,*\.git\*,*\.svn\*,*\.hg\*,*\.CVS\*,*\.DS_Store\*
@@ -198,6 +200,10 @@ noremap <Leader>l zb
 
 " Ctrl+a to switch to the alternate buffer
 noremap <C-a> <C-^>
+
+" F9/F8 to increase/decrease fold level
+noremap <silent> <F9> :let &foldlevel=&foldlevel+1<CR>:echo "Fold level: " . &foldlevel<CR>
+noremap <silent> <F8> :let &foldlevel=&foldlevel-1<CR>:echo "Fold level: " . &foldlevel<CR>
 
 " Ctrl+s to search for the word under the cursor
 noremap <C-s> :Rg<CR>
