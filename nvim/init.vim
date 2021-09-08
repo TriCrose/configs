@@ -2,6 +2,7 @@
 " TODO: better keybinds for ';', ',' and '.'
 "                  also for '*' and '#'
 " TODO: make :w also save the vim session
+" TODO: make alt+o also work when there's no clangd
 
 "----------------------------------------
 " SETTINGS
