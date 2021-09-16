@@ -202,7 +202,8 @@ noremap <Leader>l zb
 " Ctrl+a to switch to the alternate buffer
 noremap <C-a> <C-^>
 
-" F9/F8 to increase/decrease fold level
+" F5 to toggle folds, F9/F8 to increase/decrease fold level
+noremap <silent> <F5> :set foldenable!<CR>:echo "Folds enabled: " . &foldenable<CR>
 noremap <silent> <F9> :let &foldlevel=&foldlevel+1<CR>:echo "Fold level: " . &foldlevel<CR>
 noremap <silent> <F8> :let &foldlevel=&foldlevel-1<CR>:echo "Fold level: " . &foldlevel<CR>
 
