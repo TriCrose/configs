@@ -241,6 +241,7 @@ function! ToggleGitGutterFold()
     if g:is_code_folded
         GitGutterFold
         let g:is_code_folded = v:false
+        set nofoldenable
     else
         GitGutterFold|normal gg
         let g:is_code_folded = v:true
