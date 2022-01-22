@@ -29,6 +29,7 @@ set cursorline
 set colorcolumn=120
 set noshowmode
 set foldmethod=syntax
+set sessionoptions+=globals
 set nofoldenable
 
 " Exclusion paths for searching etc.
@@ -202,8 +203,8 @@ noremap <Leader>l zb
 " Ctrl+a to switch to the alternate buffer
 noremap <C-a> <C-^>
 
-" F5 to toggle folds, F9/F8 to increase/decrease fold level
-noremap <silent> <F5> :set foldenable!<CR>:echo "Folds enabled: " . &foldenable<CR>
+" F10 to toggle folds, F9/F8 to increase/decrease fold level
+noremap <silent> <F10> :set foldenable!<CR>:echo "Folds enabled: " . &foldenable<CR>
 noremap <silent> <F9> :let &foldlevel=&foldlevel+1<CR>:echo "Fold level: " . &foldlevel<CR>
 noremap <silent> <F8> :let &foldlevel=&foldlevel-1<CR>:echo "Fold level: " . &foldlevel<CR>
 
@@ -233,6 +234,11 @@ cnoremap <C-v> <C-r>+
 " Ctrl+Backspace to delete the previous word (insert/command mode)
 inoremap <C-Backspace> <C-w>
 cnoremap <C-Backspace> <C-w>
+
+" F5, F6 and F7 run custom Ex commands specified by the g:CustomCommand[1,2,3] variables
+noremap <silent> <F5> :execute g:CustomCommand1<CR>
+noremap <silent> <F6> :execute g:CustomCommand2<CR>
+noremap <silent> <F7> :execute g:CustomCommand3<CR>
 
 " Alt+Enter to show git changes
 let g:is_code_folded = v:false
