@@ -57,7 +57,6 @@ Plug 'psliwka/vim-smoothie'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jremmen/vim-ripgrep'  " Requires rg in path
 Plug 'airblade/vim-rooter'
-Plug 'SpaceVim/vim-swig'
 Plug 'junegunn/fzf', {'do':{->fzf#install()}}
 call plug#end()
 
@@ -69,10 +68,6 @@ let g:rooter_manual_only = 1
 let g:gitgutter_signs = 0
 let g:gitgutter_highlight_lines = 0
 let g:gitgutter_highlight_linenrs = 1
-
-" Set *.i/*.swg to SWIG filetype
-au BufNewFile,BufRead *.i set filetype=swig
-au BufNewFile,BufRead *.swg set filetype=swig
 
 " FZF
 let g:fzf_layout = {"window": "botright 25new"}
