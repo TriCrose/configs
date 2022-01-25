@@ -60,6 +60,11 @@ Plug 'airblade/vim-rooter'
 Plug 'junegunn/fzf', {'do':{->fzf#install()}}
 call plug#end()
 
+" Startify settings
+let g:startify_change_to_dir = 0
+let g:startify_change_to_vcs_root = 1
+let g:startify_change_cmd = 'cd'
+
 " vim-rooter settings
 let g:rooter_silent_chdir = 1
 let g:rooter_manual_only = 1
@@ -229,6 +234,9 @@ cnoremap <C-v> <C-r>+
 " Ctrl+Backspace to delete the previous word (insert/command mode)
 inoremap <C-Backspace> <C-w>
 cnoremap <C-Backspace> <C-w>
+
+" F4 to save the current session
+noremap <silent> <F4> :execute "SSave!"<CR>
 
 " F5, F6 and F7 run custom Ex commands specified by the g:CustomCommand[1,2,3] variables
 noremap <silent> <F5> :execute g:CustomCommand1<CR>
