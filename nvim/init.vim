@@ -173,6 +173,12 @@ highlight GitGutterDeleteLineNr guifg=#ea8080
 " Space to enter command mode
 noremap <Space> :
 
+" : to go to the next char result (instead of ,)
+noremap : ,
+
+" , to do the same as .
+noremap , .
+
 " Enter/Shift+Enter to search
 noremap <CR> /
 noremap <S-CR> ?
