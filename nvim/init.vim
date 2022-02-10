@@ -198,6 +198,9 @@ noremap S T
 noremap t s
 noremap T S
 
+" Shift+q for @q
+noremap Q @q
+
 " Shift+3/4 for home/end
 noremap £ ^
 
