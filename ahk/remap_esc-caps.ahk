@@ -1,2 +1,0 @@
-CapsLock::Escape
-Escape::CapsLock
