@@ -11,7 +11,7 @@
 " General settings
 set linebreak
 set breakindent showbreak=>>>
-set guifont=Fira\ Code\ Retina:h12
+set guifont=JetBrains\ Mono:h12.5
 set updatetime=100
 set mouse=a
 set noswapfile
@@ -39,6 +39,9 @@ set wildignore=*\node_modules\*,*\__pycache__\*,*\.virtualenv*,*\.git\*,*\.svn\*
 let g:neovide_cursor_trail_size=0.3
 let g:neovide_refresh_rate=60
 let g:neovide_transparency=0.95
+
+" Use Option key as meta
+let g:neovide_input_macos_alt_is_meta = v:true
 
 "----------------------------------------
 " PLUGINS
@@ -183,8 +186,9 @@ noremap , .
 noremap <CR> /
 noremap <S-CR> ?
 
-" Ctrl+o/p to move back/forward through the jump list
-noremap <C-p> <C-i>
+" Cmd+[/] to move back/forward through the jump list
+noremap <D-]> <C-i>
+noremap <D-[> <C-o>
 
 " Shift+k to yank
 noremap K y
@@ -228,7 +232,7 @@ noremap <C-z> :pwd<CR>
 noremap <C-A-z> :Rooter<CR>:echom "vim-rooter: " . getcwd()<CR>
 
 " Ctrl+Space to trigger file finder
-noremap <silent> <C-Space> :FZF<CR>
+noremap <silent> <D-p> :FZF<CR>
 
 " <Leader>+p to update plugins/coc
 noremap <Leader>p :so $MYVIMRC<CR>:PlugUpdate<CR>:CocUpdate<CR>
@@ -236,13 +240,23 @@ noremap <Leader>p :so $MYVIMRC<CR>:PlugUpdate<CR>:CocUpdate<CR>
 " Ctrl+n to clear search highlighting
 noremap <C-n> :noh<CR>
 
-" Ctrl+v to paste from clipboard (insert/command mode)
-inoremap <C-v> <C-r>+
-cnoremap <C-v> <C-r>+
+" Option+arrows to move between words
+inoremap <A-left> <S-left>
+inoremap <A-down> <S-down>
+inoremap <A-up> <S-up>
+inoremap <A-right> <S-right>
+cnoremap <A-left> <S-left>
+cnoremap <A-down> <S-down>
+cnoremap <A-up> <S-up>
+cnoremap <A-right> <S-right>
+
+" Cmd+v to paste from clipboard (insert/command mode)
+inoremap <D-v> <C-r>+
+cnoremap <D-v> <C-r>+
 
 " Ctrl+Backspace to delete the previous word (insert/command mode)
-inoremap <C-Backspace> <C-w>
-cnoremap <C-Backspace> <C-w>
+inoremap <A-Backspace> <C-w>
+cnoremap <A-Backspace> <C-w>
 
 " F4 to save the current session
 noremap <silent> <F4> :execute "SSave!"<CR>
@@ -273,8 +287,8 @@ endfunction
 " F2 to rename current file
 nnoremap <silent> <F2> :CocCommand workspace.renameCurrentFile<CR>
 
-" F11 to toggle fullscreen
-noremap <F11> :call ToggleFullscreen()<CR>
+" F12 to toggle fullscreen
+noremap <F12> :call ToggleFullscreen()<CR>
 function! ToggleFullscreen()
     if g:neovide_fullscreen
         let g:neovide_fullscreen=v:false
@@ -302,8 +316,8 @@ xmap ah <Plug>(GitGutterTextObjectOuterVisual)
 inoremap <silent><expr> <C-Space> coc#refresh()
 
 " Tab/Shift+Tab to navigate autocomplete menu if it's visible
-inoremap <silent><expr> <Tab> pumvisible() ? "<C-n>" : "<Tab>"
-inoremap <silent><expr> <S-Tab> pumvisible() ? "<C-p>" : "<S-Tab>"
+inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "<Tab>"
+inoremap <silent><expr> <S-Tab> coc#pum#visible() ? coc#pum#previous(1) : "<S-Tab>"
 
 " Ctrl+x/Ctrl+Alt+x to go to definition/declaration
 map <C-x> <Plug>(coc-definition)
@@ -344,10 +358,10 @@ noremap <A-h> :vert res -5<CR>
 noremap <A-j> :res -5<CR>
 noremap <A-k> :res +5<CR>
 noremap <A-l> :vert res +5<CR>
-noremap <A-left> :vert res -5<CR>
-noremap <A-down> :res -5<CR>
-noremap <A-up> :res +5<CR>
-noremap <A-right> :vert res +5<CR>
+nnoremap <A-left> :vert res -5<CR>
+nnoremap <A-down> :res -5<CR>
+nnoremap <A-up> :res +5<CR>
+nnoremap <A-right> :vert res +5<CR>
 
 " Shift+Alt+[h,j,k,l] (or arrows) to resize windows in greater amounts
 noremap <S-A-h> :vert res -25<CR>
@@ -360,9 +374,9 @@ noremap <S-A-up> :res +25<CR>
 noremap <S-A-right> :vert res +25<CR>
 
 " Open/close tabs
-noremap <A-n> :tabe<CR>
-noremap <A-s> :tab sp<CR>
-noremap <A-q> :tabc<CR>
+noremap <D-t> :tabe<CR>
+noremap <D-s> :tab sp<CR>
+noremap <D-w> :tabc<CR>
 
 " Ctrl+Tab/Ctrl+Shift+Tab to navigate tabs
 noremap <C-Tab> <C-PageDown>
@@ -373,16 +387,16 @@ noremap <C-S-PageDown> :tabm+<CR>
 noremap <C-S-PageUp> :tabm-<CR>
 
 " Go to tab number
-noremap <A-1> 1gt
-noremap <A-2> 2gt
-noremap <A-3> 3gt
-noremap <A-4> 4gt
-noremap <A-5> 5gt
-noremap <A-6> 6gt
-noremap <A-7> 7gt
-noremap <A-8> 8gt
-noremap <A-9> 9gt
-noremap <A-0> 10gt
+noremap <D-1> 1gt
+noremap <D-2> 2gt
+noremap <D-3> 3gt
+noremap <D-4> 4gt
+noremap <D-5> 5gt
+noremap <D-6> 6gt
+noremap <D-7> 7gt
+noremap <D-8> 8gt
+noremap <D-9> 9gt
+noremap <D-0> 10gt
 
 " Split buffer in any direction
 noremap <C-j> :sp<CR>
@@ -398,14 +412,14 @@ noremap <C-left> :abo vs<CR>
 " KEY MAPPINGS FOR TERMINALS
 "----------------------------------------
 
-" Ctrl+V to paste
-tnoremap <C-v> <C-\><C-n>pa
+" Cmd+v to paste
+tnoremap <D-v> <C-\><C-n>pa
 
 " Esc to exit terminal-mode (or, if in FZF terminal, just do normal Esc)
 tnoremap <silent><expr> <Esc> IsFZFTerminal() ? "<Esc>" : "<C-\><C-n>"
 
 " Ctrl+Bksp would normally insert a keycode (except in FZF, then just delete word)
-tnoremap <silent><expr> <C-Backspace> IsFZFTerminal() ? "<C-w>" : "<Backspace>"
+tnoremap <silent><expr> <A-Backspace> IsFZFTerminal() ? "<C-w>" : "<Backspace>"
 
 " Ctrl+u to clear the line
 tnoremap <silent><expr> <C-u> IsFZFTerminal() ? "<C-u>" : "<Esc>"
@@ -414,6 +428,6 @@ tnoremap <silent><expr> <C-u> IsFZFTerminal() ? "<C-u>" : "<Esc>"
 " SYSTEM-SPECIFIC
 "----------------------------------------
 
-if filereadable(stdpath('config') . '\system-specific.vim')
-    exec 'source ' . stdpath('config') . '\system-specific.vim'
+if filereadable(stdpath('config') . '/system-specific.vim')
+    exec 'source ' . stdpath('config') . '/system-specific.vim'
 endif
