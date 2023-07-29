@@ -1,4 +1,3 @@
-" TODO: fix gitgutter preview colours
 " TODO: better keybinds for ';', ',' and '.'
 "                  also for '*' and '#'
 " TODO: make :w also save the vim session
@@ -242,21 +241,29 @@ noremap <C-n> :noh<CR>
 
 " Option+arrows to move between words
 inoremap <A-left> <S-left>
-inoremap <A-down> <S-down>
-inoremap <A-up> <S-up>
 inoremap <A-right> <S-right>
 cnoremap <A-left> <S-left>
-cnoremap <A-down> <S-down>
-cnoremap <A-up> <S-up>
 cnoremap <A-right> <S-right>
+
+" Cmd+arrows to move to the start/end of a line
+nnoremap <D-left> <Home>
+nnoremap <D-right> <End>
+inoremap <D-left> <Home>
+inoremap <D-right> <End>
+cnoremap <D-left> <Home>
+cnoremap <D-right> <End>
 
 " Cmd+v to paste from clipboard (insert/command mode)
 inoremap <D-v> <C-r>+
 cnoremap <D-v> <C-r>+
 
-" Ctrl+Backspace to delete the previous word (insert/command mode)
+" Option+Backspace to delete the previous word (insert/command mode)
 inoremap <A-Backspace> <C-w>
 cnoremap <A-Backspace> <C-w>
+
+" Cmd+Backspace to delete the line (insert/command mode)
+inoremap <D-Backspace> <C-u>
+cnoremap <D-Backspace> <C-u>
 
 " F4 to save the current session
 noremap <silent> <F4> :execute "SSave!"<CR>
@@ -317,7 +324,7 @@ inoremap <silent><expr> <C-Space> coc#refresh()
 
 " Tab/Shift+Tab to navigate autocomplete menu if it's visible
 inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "<Tab>"
-inoremap <silent><expr> <S-Tab> coc#pum#visible() ? coc#pum#previous(1) : "<S-Tab>"
+inoremap <silent><expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "<S-Tab>"
 
 " Ctrl+x/Ctrl+Alt+x to go to definition/declaration
 map <C-x> <Plug>(coc-definition)
